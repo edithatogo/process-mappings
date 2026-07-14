@@ -1,0 +1,74 @@
+{
+  "profileId": "adverse-incidents/open-disclosure",
+  "profileVersion": "0.1.0-candidate",
+  "method": "agent-proposed",
+  "reviewState": "candidate",
+  "mappings": [
+    {
+      "id": "mapping.nz.consumer-informed",
+      "jurisdiction": "NZ",
+      "kind": "consumer-communication",
+      "scenario": "harm",
+      "sourceAssertionIds": ["assertion.nz.hdc.communication"],
+      "actorClasses": ["affected-person-and-support-person", "health-service-organisation"],
+      "humanTasks": ["choose communication format", "confirm understanding"],
+      "loss": "does not determine the content or adequacy of a particular disclosure",
+      "sourceRefs": ["https://www.hdc.org.nz/your-rights/about-the-code/code-of-health-and-disability-services-consumers-rights/"]
+    },
+    {
+      "id": "mapping.nz.review-learning",
+      "jurisdiction": "NZ",
+      "kind": "review-learning",
+      "scenario": "near-miss",
+      "sourceAssertionIds": ["assertion.nz.hqsc.review-learning"],
+      "actorClasses": ["review-or-clinical-governance-team"],
+      "humanTasks": ["select review approach", "agree learning actions"],
+      "loss": "blocked policy text prevents encoding review obligations",
+      "sourceRefs": ["https://www.hqsc.govt.nz/resources/resource-library/national-adverse-event-policy-2023/"]
+    },
+    {
+      "id": "mapping.au.open-disclosure",
+      "jurisdiction": "AU",
+      "kind": "national-framework",
+      "scenario": "delayed-recognition",
+      "sourceAssertionIds": ["assertion.au.framework.disclosure"],
+      "actorClasses": ["affected-person-and-support-person", "health-service-organisation"],
+      "humanTasks": ["adapt to state or territory requirements", "agree follow-up"],
+      "loss": "framework has no stated effective date and does not replace state or territory requirements",
+      "sourceRefs": ["https://www.safetyandquality.gov.au/sites/default/files/2026-06/Australian-Open-Disclosure-Framework_1.pdf"]
+    },
+    {
+      "id": "mapping.nsw.incident-review",
+      "jurisdiction": "AU-NSW",
+      "kind": "jurisdictional-overlay",
+      "scenario": "disputed-facts",
+      "sourceAssertionIds": ["assertion.nsw.incident.review"],
+      "actorClasses": ["review-or-clinical-governance-team"],
+      "humanTasks": ["confirm applicable NSW review pathway"],
+      "loss": "blocked directive text prevents encoding reportable incident or review thresholds",
+      "sourceRefs": ["https://www1.health.nsw.gov.au/pds/Pages/doc.aspx?dn=PD2020_047"]
+    },
+    {
+      "id": "mapping.au.secondary-summary",
+      "jurisdiction": "AU",
+      "kind": "unsupported-summary",
+      "scenario": "parallel-complaint",
+      "sourceAssertionIds": ["assertion.secondary.open-disclosure-summary"],
+      "actorClasses": ["health-service-organisation"],
+      "humanTasks": [],
+      "loss": "secondary material cannot support a controlling obligation",
+      "sourceRefs": ["https://example.invalid/secondary-summary"]
+    },
+    {
+      "id": "mapping.local.escalation",
+      "jurisdiction": "AU-NSW",
+      "kind": "local-procedure",
+      "scenario": "local-escalation",
+      "sourceAssertionIds": [],
+      "actorClasses": ["health-service-organisation"],
+      "humanTasks": ["name local owner and source"],
+      "loss": "local escalation owner and procedure are not specified by a controlling source",
+      "sourceRefs": []
+    }
+  ]
+}

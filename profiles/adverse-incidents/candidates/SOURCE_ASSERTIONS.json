@@ -1,0 +1,61 @@
+{
+  "profileId": "adverse-incidents/open-disclosure",
+  "method": "agent-proposed-source-assertion-ledger",
+  "assertions": [
+    {
+      "id": "assertion.nz.hdc.communication",
+      "sourceId": "nz-hdc-code-consumers-rights",
+      "jurisdiction": "NZ",
+      "authorityClass": "regulation",
+      "sourceStatus": "current",
+      "effectiveFrom": "1996-07-01",
+      "effectiveDateStatus": "verified",
+      "reviewerState": "agent-proposed",
+      "sourceRef": "https://www.hdc.org.nz/your-rights/about-the-code/code-of-health-and-disability-services-consumers-rights/"
+    },
+    {
+      "id": "assertion.nz.hqsc.review-learning",
+      "sourceId": "nz-hqsc-national-adverse-events-policy-2023",
+      "jurisdiction": "NZ",
+      "authorityClass": "national_policy",
+      "sourceStatus": "blocked",
+      "effectiveFrom": "2023-07-01",
+      "effectiveDateStatus": "verified",
+      "reviewerState": "agent-proposed",
+      "sourceRef": "https://www.hqsc.govt.nz/resources/resource-library/national-adverse-event-policy-2023/"
+    },
+    {
+      "id": "assertion.au.framework.disclosure",
+      "sourceId": "au-open-disclosure-framework-2026",
+      "jurisdiction": "AU",
+      "authorityClass": "national-framework",
+      "sourceStatus": "current",
+      "effectiveFrom": null,
+      "effectiveDateStatus": "not-stated",
+      "reviewerState": "agent-proposed",
+      "sourceRef": "https://www.safetyandquality.gov.au/sites/default/files/2026-06/Australian-Open-Disclosure-Framework_1.pdf"
+    },
+    {
+      "id": "assertion.nsw.incident.review",
+      "sourceId": "nsw-incident-management-pd2020-047",
+      "jurisdiction": "AU-NSW",
+      "authorityClass": "regional_policy",
+      "sourceStatus": "blocked",
+      "effectiveFrom": "2020-12-14",
+      "effectiveDateStatus": "verified",
+      "reviewerState": "agent-proposed",
+      "sourceRef": "https://www1.health.nsw.gov.au/pds/Pages/doc.aspx?dn=PD2020_047"
+    },
+    {
+      "id": "assertion.secondary.open-disclosure-summary",
+      "sourceId": "unapproved-secondary-summary",
+      "jurisdiction": "AU",
+      "authorityClass": "secondary",
+      "sourceStatus": "current",
+      "effectiveFrom": "2026-06-25",
+      "effectiveDateStatus": "verified",
+      "reviewerState": "agent-proposed",
+      "sourceRef": "https://example.invalid/secondary-summary"
+    }
+  ]
+}

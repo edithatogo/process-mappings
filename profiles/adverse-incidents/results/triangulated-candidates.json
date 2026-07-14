@@ -1,0 +1,52 @@
+{
+  "method": "deterministic-source-triangulation",
+  "profileId": "adverse-incidents/open-disclosure",
+  "results": [
+    {
+      "exceptionReasons": [],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.nz.consumer-informed",
+      "proposedDisposition": "candidate_supported"
+    },
+    {
+      "exceptionReasons": [
+        "blocked official source"
+      ],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.nz.review-learning",
+      "proposedDisposition": "needs_more_source_review"
+    },
+    {
+      "exceptionReasons": [
+        "missing effective date"
+      ],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.au.open-disclosure",
+      "proposedDisposition": "needs_more_source_review"
+    },
+    {
+      "exceptionReasons": [
+        "blocked official source"
+      ],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.nsw.incident-review",
+      "proposedDisposition": "needs_more_source_review"
+    },
+    {
+      "exceptionReasons": [
+        "secondary-source-only evidence"
+      ],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.au.secondary-summary",
+      "proposedDisposition": "needs_more_source_review"
+    },
+    {
+      "exceptionReasons": [
+        "fixture assumption underspecified"
+      ],
+      "humanReviewRequired": true,
+      "mappingId": "mapping.local.escalation",
+      "proposedDisposition": "needs_more_source_review"
+    }
+  ]
+}
