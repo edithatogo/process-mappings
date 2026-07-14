@@ -28,9 +28,11 @@ profiles`, `process-mining`, `camunda`, `public-interest-technology`.
 The Apache-2.0 license must be copied from the parent root and retained with
 the extracted tree. External source rights remain governed by each source
 manifest; unclear or incompatible material stays referenced, not vendored.
-The current FOI source manifest contains parent-local `external/foi-o/` paths;
-these must be converted to durable destination references or deliberately
-retained as a parent dependency before cutover.
+The FOI source manifest now uses immutable FOI-O blob/tree locators, with byte
+equality and SHA-256 evidence in
+`profiles/foi/SOURCE_REFERENCE_PORTABILITY.json`. The parent-only
+`contracts/consumption.json` still names local evidence paths for parent CI;
+the portability ledger is the destination-facing source locator record.
 
 ## Required hosted controls
 

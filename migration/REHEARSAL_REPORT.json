@@ -1,10 +1,10 @@
 {
   "procedure": "local-process-mappings-extraction-rehearsal",
-  "sourceCommit": "024664fe3574bb283718a2691f44a835a7550439",
-  "sourceTree": "08c3f7362b8974240f957461adff5f75272a26e5",
-  "historySplitCommit": "498b12e7dc2e92a7a51b5cddd454daa051afb16c",
-  "trackedFileCount": 25,
-  "fileManifestSha256": "869d094642b5ea38dcb77d10c480e57e4db6e04630d4fb59b53f4f897020471e",
+  "sourceCommit": "4f9df6adfd2f895195dac740f80b872a728bb038",
+  "sourceTree": "03a4b767486dc551d7aa56bd896db4d4e5855bc0",
+  "historySplitCommit": "ab6e76bb9f2c684ab05b115c1dea3736b89b8450",
+  "trackedFileCount": 26,
+  "fileManifestSha256": "deab05618dbdd288148688c31274d68ebc1c451c37493b3fa2cb8e2d28e50787",
   "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
   "transformedLinks": [
     "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
@@ -13,22 +13,22 @@
     {
       "id": "tracked-tree",
       "status": "pass",
-      "detail": "25 tracked files copied"
+      "detail": "26 tracked files copied"
     },
     {
       "id": "source-commit",
       "status": "pass",
-      "detail": "024664fe3574bb283718a2691f44a835a7550439"
+      "detail": "4f9df6adfd2f895195dac740f80b872a728bb038"
     },
     {
       "id": "source-tree",
       "status": "pass",
-      "detail": "08c3f7362b8974240f957461adff5f75272a26e5"
+      "detail": "03a4b767486dc551d7aa56bd896db4d4e5855bc0"
     },
     {
       "id": "history-preservation",
       "status": "pass",
-      "detail": "498b12e7dc2e92a7a51b5cddd454daa051afb16c"
+      "detail": "ab6e76bb9f2c684ab05b115c1dea3736b89b8450"
     },
     {
       "id": "license-transfer",
@@ -77,8 +77,13 @@
     },
     {
       "id": "source-reference-portability",
+      "status": "pass",
+      "detail": "FOI-O profile references use pinned durable locators"
+    },
+    {
+      "id": "parent-consumption-evidence",
       "status": "deferred",
-      "detail": "parent-local FOI-O evidence paths need durable destination references"
+      "detail": "parent-only consumption manifest retains local evidence paths"
     },
     {
       "id": "remote-creation",

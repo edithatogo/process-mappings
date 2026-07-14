@@ -13,32 +13,32 @@
       "id": "source.foio-oia-rules-design",
       "kind": "implementation-design",
       "authorityClass": "runtime_observation",
-      "url": "external/foi-o/rules/DESIGN.md",
-      "sourceStatus": "recorded-local",
+      "url": "https://github.com/edithatogo/foi-o/blob/447920b9bb72830f2c8490ee40bdcd73c5eedb4a/rules/DESIGN.md",
+      "sourceStatus": "locator-verified-content-matched",
       "reviewerState": "agent-proposed",
       "rights": "repository-controlled-reference",
-      "digest": "not-recorded"
+      "digest": "sha256:53cd99792a027e5779760865f2708905f7b978b93962dd49c42da9fee9f996fb"
     },
     {
       "id": "source.foio-oia-traces",
       "kind": "execution-evidence",
       "authorityClass": "runtime_observation",
-      "url": "external/foi-o/rules/traces/",
-      "sourceStatus": "recorded-local",
+      "url": "https://github.com/edithatogo/foi-o/tree/447920b9bb72830f2c8490ee40bdcd73c5eedb4a/rules/traces",
+      "sourceStatus": "locator-verified-directory-content-matched-for-profile-references",
       "reviewerState": "agent-proposed",
       "rights": "repository-controlled-reference",
-      "digest": "not-recorded"
+      "digest": "see SOURCE_REFERENCE_PORTABILITY.json"
     },
     {
       "id": "source.oia-1982-primary-notes",
       "kind": "primary-source-notes",
       "authorityClass": "law",
-      "url": "external/foi-o/rules/SOURCES.md",
-      "sourceStatus": "inherited-local-note-not-live-verified",
+      "url": "https://github.com/edithatogo/foi-o/blob/447920b9bb72830f2c8490ee40bdcd73c5eedb4a/rules/SOURCES.md",
+      "sourceStatus": "locator-verified-content-matched-inherited-note-not-authority-certified",
       "reviewerState": "agent-proposed",
       "effectiveFrom": "2025-04-05",
       "rights": "official-source-referenced-not-vendored",
-      "digest": "not-recorded"
+      "digest": "sha256:0d565fecaed0d26beefac4a5574fd54a71db383be609e464389dbddbdb1a874f"
     }
   ],
   "promotionBoundary": "All mappings and source assertions remain candidates until independent human review and primary-source verification."
