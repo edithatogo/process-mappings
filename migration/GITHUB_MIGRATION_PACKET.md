@@ -31,8 +31,9 @@ manifest; unclear or incompatible material stays referenced, not vendored.
 The FOI source manifest now uses immutable FOI-O blob/tree locators, with byte
 equality and SHA-256 evidence in
 `profiles/foi/SOURCE_REFERENCE_PORTABILITY.json`. The parent-only
-`contracts/consumption.json` still names local evidence paths for parent CI;
-the portability ledger is the destination-facing source locator record.
+`contracts/consumption.json` retains local evidence paths for parent CI and now
+also carries pinned `portableEvidenceSources`; the portability ledger remains
+the byte-level destination-facing source record.
 
 ## Required hosted controls
 

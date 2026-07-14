@@ -1,10 +1,10 @@
 {
   "procedure": "local-process-mappings-extraction-rehearsal",
-  "sourceCommit": "4f9df6adfd2f895195dac740f80b872a728bb038",
-  "sourceTree": "03a4b767486dc551d7aa56bd896db4d4e5855bc0",
-  "historySplitCommit": "ab6e76bb9f2c684ab05b115c1dea3736b89b8450",
+  "sourceCommit": "68b12b7c16964797c0ebbe24f01c93c8347093cb",
+  "sourceTree": "2ef2a240d314c8ff5387486083fa1e22f67ffc4d",
+  "historySplitCommit": "35b459adacb4a058b676eb0ac1bfb8e3def2a389",
   "trackedFileCount": 26,
-  "fileManifestSha256": "deab05618dbdd288148688c31274d68ebc1c451c37493b3fa2cb8e2d28e50787",
+  "fileManifestSha256": "550c018930a3de8d78d4441ca1ad958b62d0bcc450395f7546fa45113712cbe9",
   "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
   "transformedLinks": [
     "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
@@ -18,17 +18,17 @@
     {
       "id": "source-commit",
       "status": "pass",
-      "detail": "4f9df6adfd2f895195dac740f80b872a728bb038"
+      "detail": "68b12b7c16964797c0ebbe24f01c93c8347093cb"
     },
     {
       "id": "source-tree",
       "status": "pass",
-      "detail": "03a4b767486dc551d7aa56bd896db4d4e5855bc0"
+      "detail": "2ef2a240d314c8ff5387486083fa1e22f67ffc4d"
     },
     {
       "id": "history-preservation",
       "status": "pass",
-      "detail": "ab6e76bb9f2c684ab05b115c1dea3736b89b8450"
+      "detail": "35b459adacb4a058b676eb0ac1bfb8e3def2a389"
     },
     {
       "id": "license-transfer",
@@ -82,8 +82,8 @@
     },
     {
       "id": "parent-consumption-evidence",
-      "status": "deferred",
-      "detail": "parent-only consumption manifest retains local evidence paths"
+      "status": "pass",
+      "detail": "parent manifest retains local paths and pinned portable locators"
     },
     {
       "id": "remote-creation",
