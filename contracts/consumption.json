@@ -1,0 +1,20 @@
+{
+  "contract": {
+    "conformsTo": "pic-process-profile/0.1.0",
+    "repository": "edithatogo/rac-conformance",
+    "schemaPath": "contracts/process-profile/0.1.0/schema.json",
+    "commit": "d4be00911858437afbc0846ee0a5d01bbfa3e669",
+    "schemaSha256": "b41cd3a56d003817d75aac779b54ece9c8d1b36cb68cfcdca16bd43d7b3bb635"
+  },
+  "examples": [
+    "contracts/process-profile/0.1.0/examples/valid/foi-oia.json",
+    "contracts/process-profile/0.1.0/examples/valid/human-review.json"
+  ],
+  "profileSourceManifest": "subrepos/process-mappings/profiles/foi/SOURCE_MANIFEST.json",
+  "evidenceSources": [
+    "external/foi-o/rules/DESIGN.md",
+    "external/foi-o/rules/SOURCES.md",
+    "external/foi-o/rules/traces/"
+  ],
+  "status": "candidate-consumer-pinned"
+}

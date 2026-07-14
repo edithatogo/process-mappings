@@ -5,8 +5,8 @@
     "conformsTo": "pic-process-profile/0.1.0",
     "repository": "edithatogo/rac-conformance",
     "path": "contracts/process-profile/0.1.0/schema.json",
-    "commit": "689ab20",
-    "status": "candidate-pinned-commit"
+    "commit": "d4be00911858437afbc0846ee0a5d01bbfa3e669",
+    "status": "candidate-pinned-main-commit"
   },
   "sources": [
     {

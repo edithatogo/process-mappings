@@ -1,0 +1,99 @@
+{
+  "procedure": "local-process-mappings-extraction-rehearsal",
+  "sourceCommit": "024664fe3574bb283718a2691f44a835a7550439",
+  "sourceTree": "08c3f7362b8974240f957461adff5f75272a26e5",
+  "historySplitCommit": "498b12e7dc2e92a7a51b5cddd454daa051afb16c",
+  "trackedFileCount": 25,
+  "fileManifestSha256": "869d094642b5ea38dcb77d10c480e57e4db6e04630d4fb59b53f4f897020471e",
+  "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
+  "transformedLinks": [
+    "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
+  ],
+  "checks": [
+    {
+      "id": "tracked-tree",
+      "status": "pass",
+      "detail": "25 tracked files copied"
+    },
+    {
+      "id": "source-commit",
+      "status": "pass",
+      "detail": "024664fe3574bb283718a2691f44a835a7550439"
+    },
+    {
+      "id": "source-tree",
+      "status": "pass",
+      "detail": "08c3f7362b8974240f957461adff5f75272a26e5"
+    },
+    {
+      "id": "history-preservation",
+      "status": "pass",
+      "detail": "498b12e7dc2e92a7a51b5cddd454daa051afb16c"
+    },
+    {
+      "id": "license-transfer",
+      "status": "pass",
+      "detail": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964"
+    },
+    {
+      "id": "standalone-git-commit",
+      "status": "pass",
+      "detail": "local commit created"
+    },
+    {
+      "id": "independent-clone",
+      "status": "pass",
+      "detail": "local clone completed"
+    },
+    {
+      "id": "link-audit",
+      "status": "pass",
+      "detail": "all local Markdown links resolve"
+    },
+    {
+      "id": "provenance-files",
+      "status": "pass",
+      "detail": "source manifest and consumption manifest present"
+    },
+    {
+      "id": "standalone-ci",
+      "status": "deferred",
+      "detail": "destination workflow must be added after cutover approval"
+    },
+    {
+      "id": "local-installation",
+      "status": "not-applicable",
+      "detail": "incubator contains no installable runtime package"
+    },
+    {
+      "id": "dependency-updates",
+      "status": "deferred",
+      "detail": "destination dependency policy must be configured after cutover"
+    },
+    {
+      "id": "issue-migration",
+      "status": "drafted",
+      "detail": "migration packet preserves parent issue cross-references"
+    },
+    {
+      "id": "source-reference-portability",
+      "status": "deferred",
+      "detail": "parent-local FOI-O evidence paths need durable destination references"
+    },
+    {
+      "id": "remote-creation",
+      "status": "deferred",
+      "detail": "explicit human cutover gate required"
+    },
+    {
+      "id": "rollback",
+      "status": "defined",
+      "detail": "retain parent subtree until hosted clone and checks pass"
+    }
+  ],
+  "remoteCreated": false,
+  "rollback": {
+    "beforeCutover": "delete temporary extraction and keep parent subtree authoritative",
+    "afterCutover": "restore parent reference only after canonical clone verification"
+  }
+}
