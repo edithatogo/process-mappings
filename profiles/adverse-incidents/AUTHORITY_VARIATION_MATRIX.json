@@ -1,0 +1,96 @@
+{
+  "profileId": "adverse-incidents/open-disclosure",
+  "profileVersion": "0.1.0-candidate",
+  "method": "agent-proposed-authority-variation-analysis",
+  "mappingState": "not-a-crosswalk",
+  "authorityBoundary": "Rows distinguish source authority and variation; they do not assert legal equivalence, clinical adequacy, or organisational compliance.",
+  "layers": [
+    {
+      "id": "national-consistency",
+      "label": "National consistency layer",
+      "description": "Candidate shared process concerns across jurisdictions: identify actual or potential harm, communicate with affected people, support participation, review learning, and improve systems.",
+      "sourceIds": ["nz-hqsc-national-adverse-events-policy-2023", "au-open-disclosure-framework-2026", "au-nsqhs-action-1-12"],
+      "disposition": "candidate-commonality-needs-human-review",
+      "authorityStatus": "non-equivalent-policy-and-framework-support"
+    },
+    {
+      "id": "nz-consumer-rights",
+      "label": "New Zealand consumer-rights requirements",
+      "description": "Consumer communication, information, support, and complaint rights arise from the Code; the adverse-events policy adds a national reporting, review, learning, and improvement policy layer.",
+      "sourceIds": ["nz-hdc-code-consumers-rights", "nz-hqsc-national-adverse-events-policy-2023"],
+      "disposition": "candidate-jurisdiction-requirement",
+      "authorityStatus": "regulation-plus-policy-not-yet-certified"
+    },
+    {
+      "id": "australia-national-framework",
+      "label": "Australian national framework and accreditation layer",
+      "description": "The national framework provides a nationally consistent basis for open disclosure, while NSQHS Action 1.12 describes an accreditation-standard expectation for an open disclosure program and monitoring.",
+      "sourceIds": ["au-open-disclosure-framework-2026", "au-nsqhs-action-1-12"],
+      "disposition": "candidate-national-guidance-and-standard",
+      "authorityStatus": "non-legislative-national-layer"
+    },
+    {
+      "id": "nsw-incident-management",
+      "label": "NSW incident-management overlay",
+      "description": "NSW-specific incident reporting, risk assessment, review, and learning procedures must be treated as a state policy overlay rather than as the Australian national framework.",
+      "sourceIds": ["nsw-incident-management-pd2020-047"],
+      "disposition": "needs_more_source_review",
+      "authorityStatus": "official-locator-but-blocked-controlling-text"
+    },
+    {
+      "id": "nsw-open-disclosure",
+      "label": "NSW open-disclosure overlay",
+      "description": "NSW open disclosure is modeled as a state policy overlay linked to incident management; the exact current directive text and applicability must be verified before obligation encoding.",
+      "sourceIds": ["nsw-open-disclosure-pd2023-034"],
+      "disposition": "needs_more_source_review",
+      "authorityStatus": "official-locator-but-blocked-controlling-text"
+    },
+    {
+      "id": "regional-implementation",
+      "label": "Regional implementation",
+      "description": "District, facility, or service-level procedures may implement a national or state source but are not generalized here as national or jurisdiction-wide requirements.",
+      "sourceIds": [],
+      "disposition": "fixture-assumption-underspecified",
+      "authorityStatus": "not-modeled-without-named-local-consumer-and-source"
+    },
+    {
+      "id": "hypothetical-local-procedure",
+      "label": "Hypothetical local procedure",
+      "description": "A local workflow, role assignment, escalation route, or documentation practice without a named authoritative source remains an explicit modeling boundary, not an inferred obligation.",
+      "sourceIds": [],
+      "disposition": "needs_more_source_review",
+      "authorityStatus": "non-controlling-hypothesis"
+    }
+  ],
+  "actorAuthority": [
+    {
+      "actorClass": "affected-person-and-support-person",
+      "authorityRole": "participation-and-communication-preference",
+      "discretion": "may express needs, preferences, questions, and whether to participate in a discussion",
+      "escalationOwner": "service-specific human owner to be identified from controlling local policy",
+      "sourceIds": ["nz-hdc-code-consumers-rights", "au-open-disclosure-framework-2026"]
+    },
+    {
+      "actorClass": "health-service-organisation",
+      "authorityRole": "establish-and-monitor-process",
+      "discretion": "implements the applicable policy or standard within jurisdictional and local constraints",
+      "escalationOwner": "clinical-governance or equivalent accountable role; exact role is jurisdiction-specific",
+      "sourceIds": ["au-nsqhs-action-1-12", "au-open-disclosure-framework-2026"]
+    },
+    {
+      "actorClass": "review-or-clinical-governance-team",
+      "authorityRole": "review-and-learning",
+      "discretion": "selects or applies a review pathway only where the controlling jurisdictional source supports it",
+      "escalationOwner": "not inferred; requires jurisdictional source and local procedure",
+      "sourceIds": ["nz-hqsc-national-adverse-events-policy-2023", "nsw-incident-management-pd2020-047"]
+    }
+  ],
+  "exceptions": [
+    "blocked official source",
+    "missing effective date",
+    "fixture assumption underspecified",
+    "secondary-source-only evidence",
+    "conflicting jurisdictional or local authority"
+  ],
+  "promotionBoundary": "All rows remain agent-proposed; no row is a certified obligation or legal/clinical recommendation."
+}
