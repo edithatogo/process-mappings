@@ -1,0 +1,45 @@
+{
+  "profileId": "foi/nz-oia",
+  "profileVersion": "0.1.0-candidate",
+  "contract": {
+    "conformsTo": "pic-process-profile/0.1.0",
+    "repository": "edithatogo/rac-conformance",
+    "path": "contracts/process-profile/0.1.0/schema.json",
+    "commit": "689ab20",
+    "status": "candidate-pinned-commit"
+  },
+  "sources": [
+    {
+      "id": "source.foio-oia-rules-design",
+      "kind": "implementation-design",
+      "authorityClass": "runtime_observation",
+      "url": "external/foi-o/rules/DESIGN.md",
+      "sourceStatus": "recorded-local",
+      "reviewerState": "agent-proposed",
+      "rights": "repository-controlled-reference",
+      "digest": "not-recorded"
+    },
+    {
+      "id": "source.foio-oia-traces",
+      "kind": "execution-evidence",
+      "authorityClass": "runtime_observation",
+      "url": "external/foi-o/rules/traces/",
+      "sourceStatus": "recorded-local",
+      "reviewerState": "agent-proposed",
+      "rights": "repository-controlled-reference",
+      "digest": "not-recorded"
+    },
+    {
+      "id": "source.oia-1982-primary-notes",
+      "kind": "primary-source-notes",
+      "authorityClass": "law",
+      "url": "external/foi-o/rules/SOURCES.md",
+      "sourceStatus": "inherited-local-note-not-live-verified",
+      "reviewerState": "agent-proposed",
+      "effectiveFrom": "2025-04-05",
+      "rights": "official-source-referenced-not-vendored",
+      "digest": "not-recorded"
+    }
+  ],
+  "promotionBoundary": "All mappings and source assertions remain candidates until independent human review and primary-source verification."
+}
