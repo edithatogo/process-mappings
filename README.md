@@ -8,6 +8,9 @@ The intended product is a domain-neutral collection of source-backed process
 profiles, jurisdiction overlays, synthetic candidate scenarios, and optional
 platform adapters. Normative PIC contracts remain in `rac-conformance`.
 
+See [REPOSITORY_BOUNDARY.md](REPOSITORY_BOUNDARY.md) for ownership and
+[LICENSE_BOUNDARY.md](LICENSE_BOUNDARY.md) for incubation and extraction rights.
+
 ## Initial profile homes
 
 - `profiles/foi/`: compatibility with FOI-O semantics and foi-process evidence.

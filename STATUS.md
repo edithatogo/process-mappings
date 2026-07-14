@@ -3,7 +3,7 @@
 - Lifecycle: incubating inside `rac-conformance`.
 - Canonical repository: not yet established.
 - Proposed future remote: `edithatogo/process-mappings`.
-- Remote creation/cutover: blocked on the explicit `[HUMAN]` gate in issue #50.
+- Remote creation/cutover: blocked on the explicit `[HUMAN]` gate in [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 - Writable source of truth: this subtree only while incubation is active.
 - Implemented profiles: none.
 - Implemented adapters: none.
