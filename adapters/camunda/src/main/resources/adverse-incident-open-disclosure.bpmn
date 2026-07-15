@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:zeebe="http://camunda.org/schema/zeebe/1.0"
+                  id="Definitions_pic_adverse_incident"
+                  targetNamespace="https://github.com/edithatogo/rac-conformance/pic/camunda">
+  <bpmn:process id="pic_adverse_incident_open_disclosure_v1" name="PIC adverse incident and open disclosure" isExecutable="true">
+    <bpmn:startEvent id="start_incident_received" name="Incident received">
+      <bpmn:outgoing>flow_start_to_normalize</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="pic_rule_normalize_event" name="Normalize observed event">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="pic-rule-normalize-event" retries="3" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>flow_start_to_normalize</bpmn:incoming>
+      <bpmn:outgoing>flow_normalize_to_review</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="human_review_disclosure" name="Human disclosure and review decision">
+      <bpmn:incoming>flow_normalize_to_review</bpmn:incoming>
+      <bpmn:outgoing>flow_review_to_timer</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:intermediateCatchEvent id="timer_follow_up_due" name="Follow-up due">
+      <bpmn:incoming>flow_review_to_timer</bpmn:incoming>
+      <bpmn:outgoing>flow_timer_to_learning</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration>PT24H</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:serviceTask id="pic_rule_record_learning" name="Record human-approved learning action">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="pic-record-learning" retries="3" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>flow_timer_to_learning</bpmn:incoming>
+      <bpmn:outgoing>flow_learning_to_end</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="end_learning_recorded" name="Learning record complete">
+      <bpmn:incoming>flow_learning_to_end</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:boundaryEvent id="error_rule_worker" name="Technical rule-worker error" attachedToRef="pic_rule_normalize_event">
+      <bpmn:outgoing>flow_error_to_human_escalation</bpmn:outgoing>
+      <bpmn:errorEventDefinition errorRef="error_technical_worker" />
+    </bpmn:boundaryEvent>
+    <bpmn:userTask id="human_technical_escalation" name="Human technical escalation">
+      <bpmn:incoming>flow_error_to_human_escalation</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="flow_start_to_normalize" sourceRef="start_incident_received" targetRef="pic_rule_normalize_event" />
+    <bpmn:sequenceFlow id="flow_normalize_to_review" sourceRef="pic_rule_normalize_event" targetRef="human_review_disclosure" />
+    <bpmn:sequenceFlow id="flow_review_to_timer" sourceRef="human_review_disclosure" targetRef="timer_follow_up_due" />
+    <bpmn:sequenceFlow id="flow_timer_to_learning" sourceRef="timer_follow_up_due" targetRef="pic_rule_record_learning" />
+    <bpmn:sequenceFlow id="flow_learning_to_end" sourceRef="pic_rule_record_learning" targetRef="end_learning_recorded" />
+    <bpmn:sequenceFlow id="flow_error_to_human_escalation" sourceRef="error_rule_worker" targetRef="human_technical_escalation" />
+    <bpmn:error id="error_technical_worker" errorCode="PIC_TECHNICAL_WORKER_ERROR" />
+  </bpmn:process>
+</bpmn:definitions>

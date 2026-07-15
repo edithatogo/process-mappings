@@ -7,7 +7,8 @@ Date: 2026-07-15
 
 ## Decision
 
-Use Camunda Process Test (CPT) with the Camunda Java client, JUnit 5, Java 17,
+Use Camunda Process Test (CPT) with the Camunda Java client, JUnit Jupiter
+6.0.3 using the JUnit 5 API, Java 17,
 and the Testcontainers runtime. Pin the stable Camunda dependency line to
 `8.9.12` for the first reproducible adapter experiment. Camunda 8.10 alpha
 artifacts are not used as conformance evidence.

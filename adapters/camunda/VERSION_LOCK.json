@@ -4,7 +4,7 @@
   "camundaVersion": "8.9.12",
   "camundaVersionStatus": "latest-stable-selected-2026-07-15; alpha-lines-excluded",
   "java": {"minimum": "17", "distribution": "any-compatible-jdk"},
-  "testFramework": {"name": "JUnit 5", "reason": "official CPT requirement"},
+  "testFramework": {"name": "JUnit Jupiter 6.0.3 (JUnit 5 API)", "reason": "CPT 8.9.12 dependency alignment; official CPT tests use the JUnit 5 API"},
   "processTest": {
     "artifact": "io.camunda:camunda-process-test-java:8.9.12",
     "pomSha256": "05d24be2501d37769a94482d2e53c5d2d348e6eba17743e3d23419e113ba0b4e",

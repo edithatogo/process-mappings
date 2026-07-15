@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.edithatogo.rac</groupId>
+  <artifactId>pic-camunda-adapter</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>Optional PIC Camunda adapter</name>
+  <description>Non-normative Camunda projection for the PIC certified demonstrator</description>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <camunda.version>8.9.12</camunda.version>
+    <!-- CPT 8.9.12 resolves the JUnit Jupiter 6.0.3 runtime; keep the test
+         launcher and platform aligned with that transitive dependency set. -->
+    <junit.version>6.0.3</junit.version>
+    <surefire.version>3.5.2</surefire.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.camunda</groupId>
+      <artifactId>camunda-process-test-java</artifactId>
+      <version>${camunda.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${surefire.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
