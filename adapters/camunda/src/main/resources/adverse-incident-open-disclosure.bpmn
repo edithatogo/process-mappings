@@ -10,6 +10,11 @@
     <bpmn:serviceTask id="pic_rule_normalize_event" name="Normalize observed event">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="pic-rule-normalize-event" retries="3" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=correlationId" target="correlationId" />
+          <zeebe:input source="=incidentId" target="incidentId" />
+          <zeebe:input source="=observedEvent" target="observedEvent" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>flow_start_to_normalize</bpmn:incoming>
       <bpmn:outgoing>flow_normalize_to_review</bpmn:outgoing>
@@ -28,6 +33,11 @@
     <bpmn:serviceTask id="pic_rule_record_learning" name="Record human-approved learning action">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="pic-record-learning" retries="3" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=correlationId" target="correlationId" />
+          <zeebe:input source="=incidentId" target="incidentId" />
+          <zeebe:input source="=learningAction" target="learningAction" />
+        </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>flow_timer_to_learning</bpmn:incoming>
       <bpmn:outgoing>flow_learning_to_end</bpmn:outgoing>
