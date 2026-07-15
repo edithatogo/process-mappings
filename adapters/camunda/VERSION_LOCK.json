@@ -1,0 +1,18 @@
+{
+  "adapterId": "camunda-pic-optional",
+  "lockVersion": "0.1.0",
+  "camundaVersion": "8.9.12",
+  "camundaVersionStatus": "latest-stable-selected-2026-07-15; alpha-lines-excluded",
+  "java": {"minimum": "17", "distribution": "any-compatible-jdk"},
+  "testFramework": {"name": "JUnit 5", "reason": "official CPT requirement"},
+  "processTest": {
+    "artifact": "io.camunda:camunda-process-test-java:8.9.12",
+    "pomSha256": "05d24be2501d37769a94482d2e53c5d2d348e6eba17743e3d23419e113ba0b4e",
+    "jarSha256": "ae1217d0bbb48b9006bf52726cb1b0fe2773d7b8b2cf43a4cbf29196560b08c3"
+  },
+  "runtime": {"kind": "testcontainers", "dockerRequired": true, "remoteRuntimeAllowed": true},
+  "demonstrator": "adverse_incident_open_disclosure_20260714",
+  "normativeDependency": false,
+  "credentials": "none-committed",
+  "runtimeState": "not-committed"
+}
