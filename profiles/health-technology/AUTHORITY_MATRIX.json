@@ -1,0 +1,104 @@
+{
+  "profileId": "health-technology/regulator-hta-funder",
+  "profileVersion": "0.1.0-candidate",
+  "method": "agent-proposed-authority-function-matrix",
+  "mappingState": "candidate-not-certified",
+  "authorityBoundary": "Rows identify institutional functions and ownership. They do not assert legal equivalence, clinical merit, funding entitlement, price, or patient access.",
+  "functions": [
+    {
+      "id": "market-authorisation",
+      "label": "Market authorisation",
+      "decisionOwnerClasses": ["medicine-regulator"],
+      "adviceOwnerClasses": [],
+      "applicant": "marketing-authorisation-holder-or-sponsor",
+      "output": "authorisation-or-regulatory-decision",
+      "reviewRoute": "jurisdiction-specific-regulatory-review-or-reconsideration",
+      "postMarketOwnerClasses": ["medicine-regulator"],
+      "authorityIds": ["nz-medsafe", "au-tga", "uk-mhra", "us-fda"],
+      "sourceIds": ["nz-medsafe-evaluation", "au-tga-prescription-registration", "uk-mhra-market-authorisation", "us-fda-drug-review"]
+    },
+    {
+      "id": "medicine-hta-and-funding-advice",
+      "label": "Medicine HTA and funding advice",
+      "decisionOwnerClasses": ["hta-committee-or-adviser"],
+      "adviceOwnerClasses": ["hta-committee-or-adviser"],
+      "applicant": "sponsor-or-authorised-applicant",
+      "output": "assessment-advice-or-recommendation",
+      "reviewRoute": "committee-specific-reconsideration-or-response-route",
+      "postMarketOwnerClasses": ["hta-committee-or-adviser", "payer-or-funder"],
+      "authorityIds": ["nz-pharmac", "au-pbac", "uk-nice"],
+      "sourceIds": ["nz-pharmac-funding-journey", "au-pbac-guidance", "uk-nice-ta-manual"]
+    },
+    {
+      "id": "medicine-public-funding-and-listing",
+      "label": "Medicine public funding and listing",
+      "decisionOwnerClasses": ["payer-or-funder", "minister-or-delegate"],
+      "adviceOwnerClasses": ["hta-committee-or-adviser"],
+      "applicant": "sponsor-or-authorised-applicant",
+      "output": "funding-listing-restriction-or-no-listing-decision",
+      "reviewRoute": "jurisdiction-specific-negotiation-reconsideration-or-appeal",
+      "postMarketOwnerClasses": ["payer-or-funder", "medicine-regulator"],
+      "authorityIds": ["nz-pharmac", "au-pbs"],
+      "sourceIds": ["nz-pharmac-funding-journey", "au-pbs-listing-steps"]
+    },
+    {
+      "id": "service-and-technology-hta",
+      "label": "Service and technology HTA",
+      "decisionOwnerClasses": ["hta-committee-or-adviser"],
+      "adviceOwnerClasses": ["hta-committee-or-adviser"],
+      "applicant": "service-or-technology-applicant",
+      "output": "service-funding-advice-or-outcome",
+      "reviewRoute": "assessment-pathway-specific-response-or-reconsideration",
+      "postMarketOwnerClasses": ["service-funder", "hta-committee-or-adviser"],
+      "authorityIds": ["au-msac"],
+      "sourceIds": ["au-msac-assessment-pathways", "au-msac-process"]
+    },
+    {
+      "id": "service-benefit-schedule",
+      "label": "Service benefit schedule administration",
+      "decisionOwnerClasses": ["service-funder"],
+      "adviceOwnerClasses": ["hta-committee-or-adviser"],
+      "applicant": "service-or-technology-applicant",
+      "output": "schedule-item-or-benefit-administration",
+      "reviewRoute": "program-specific-application-or-review-route",
+      "postMarketOwnerClasses": ["service-funder"],
+      "authorityIds": ["au-mbs"],
+      "sourceIds": ["au-mbs-home", "au-msac-process"]
+    },
+    {
+      "id": "payer-coverage-determination",
+      "label": "Payer coverage determination",
+      "decisionOwnerClasses": ["payer-or-funder"],
+      "adviceOwnerClasses": ["technology-assessment-or-advisory-body"],
+      "applicant": "requester-or-payer-authorised-party",
+      "output": "coverage-determination-restriction-or-evidence-development",
+      "reviewRoute": "payer-specific-reconsideration-or-appeal",
+      "postMarketOwnerClasses": ["payer-or-funder"],
+      "authorityIds": ["us-cms-medicare", "us-commercial-payer-unspecified"],
+      "sourceIds": ["us-cms-ncd-process", "us-cms-part-d-determination"]
+    }
+  ],
+  "authorityCatalog": [
+    {"id": "nz-medsafe", "jurisdiction": "NZ", "authorityClass": "medicine-regulator", "functions": ["market-authorisation", "post-market-monitoring"]},
+    {"id": "nz-pharmac", "jurisdiction": "NZ", "authorityClass": "payer-or-funder-and-hta-adviser", "functions": ["medicine-hta-and-funding-advice", "medicine-public-funding-and-listing"]},
+    {"id": "au-tga", "jurisdiction": "AU", "authorityClass": "medicine-regulator", "functions": ["market-authorisation", "post-market-monitoring"]},
+    {"id": "au-pbac", "jurisdiction": "AU", "authorityClass": "hta-committee-or-adviser", "functions": ["medicine-hta-and-funding-advice"]},
+    {"id": "au-pbs", "jurisdiction": "AU", "authorityClass": "payer-or-funder", "functions": ["medicine-public-funding-and-listing"]},
+    {"id": "au-msac", "jurisdiction": "AU", "authorityClass": "hta-committee-or-adviser", "functions": ["service-and-technology-hta"]},
+    {"id": "au-mbs", "jurisdiction": "AU", "authorityClass": "service-funder", "functions": ["service-benefit-schedule"]},
+    {"id": "uk-mhra", "jurisdiction": "UK", "authorityClass": "medicine-regulator", "functions": ["market-authorisation", "post-market-monitoring"]},
+    {"id": "uk-nice", "jurisdiction": "UK", "authorityClass": "hta-committee-or-adviser", "functions": ["medicine-hta-and-funding-advice"]},
+    {"id": "us-fda", "jurisdiction": "US", "authorityClass": "medicine-regulator", "functions": ["market-authorisation", "post-market-monitoring"]},
+    {"id": "us-cms-medicare", "jurisdiction": "US", "authorityClass": "payer-or-funder", "functions": ["payer-coverage-determination"]},
+    {"id": "us-commercial-payer-unspecified", "jurisdiction": "US", "authorityClass": "payer-or-funder", "functions": ["payer-coverage-determination"]}
+  ],
+  "nonEquivalenceRules": [
+    {"subject": "us-fda", "forbiddenFunctions": ["medicine-public-funding-and-listing", "payer-coverage-determination"]},
+    {"subject": "au-mbs", "forbiddenFunctions": ["market-authorisation", "medicine-public-funding-and-listing"]},
+    {"subject": "au-msac", "forbiddenFunctions": ["market-authorisation", "medicine-public-funding-and-listing"]},
+    {"subject": "au-pbac", "forbiddenFunctions": ["market-authorisation"]},
+    {"subject": "uk-nice", "forbiddenFunctions": ["market-authorisation"]},
+    {"subject": "nz-pharmac", "forbiddenFunctions": ["market-authorisation"]}
+  ],
+  "promotionBoundary": "All rows remain agent-proposed until a human certifies the controlling source spine and comparison limits."
+}
