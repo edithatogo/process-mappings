@@ -20,7 +20,7 @@ class CamundaAdapterContractTest {
   private static final String BPMN_NS = "http://www.omg.org/spec/BPMN/20100524/MODEL";
   private static final String ZEEBE_NS = "http://camunda.org/schema/zeebe/1.0";
   private static final Set<String> REQUIRED_VARIABLES = Set.of(
-      "correlationId", "incidentId", "observedEvent", "learningAction");
+      "correlationId", "incidentId", "observedEvent", "learningAction", "humanApprovedLearning");
 
   @Test
   void demonstratorSatisfiesTheExecutableContract() throws Exception {
@@ -107,7 +107,7 @@ class CamundaAdapterContractTest {
     }
     assertTrue(mappedTargets.contains("correlationId"));
     assertTrue(mappedTargets.contains("incidentId"));
-    assertEquals(3, mappedTargets.size());
+    assertEquals(taskId.equals("pic_rule_record_learning") ? 4 : 3, mappedTargets.size());
   }
 
   private Document loadModel() throws Exception {

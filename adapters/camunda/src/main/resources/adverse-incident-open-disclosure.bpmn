@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xmlns:zeebe="http://camunda.org/schema/zeebe/1.0"
                   id="Definitions_pic_adverse_incident"
                   targetNamespace="https://github.com/edithatogo/rac-conformance/pic/camunda">
@@ -17,10 +18,15 @@
         </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>flow_start_to_normalize</bpmn:incoming>
-      <bpmn:outgoing>flow_normalize_to_review</bpmn:outgoing>
+      <bpmn:outgoing>flow_normalize_to_gateway</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="gateway_normalization_result" name="Normalization result" default="flow_gateway_to_escalation">
+      <bpmn:incoming>flow_normalize_to_gateway</bpmn:incoming>
+      <bpmn:outgoing>flow_gateway_to_review</bpmn:outgoing>
+      <bpmn:outgoing>flow_gateway_to_escalation</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
     <bpmn:userTask id="human_review_disclosure" name="Human disclosure and review decision">
-      <bpmn:incoming>flow_normalize_to_review</bpmn:incoming>
+      <bpmn:incoming>flow_gateway_to_review</bpmn:incoming>
       <bpmn:outgoing>flow_review_to_timer</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:intermediateCatchEvent id="timer_follow_up_due" name="Follow-up due">
@@ -37,6 +43,7 @@
           <zeebe:input source="=correlationId" target="correlationId" />
           <zeebe:input source="=incidentId" target="incidentId" />
           <zeebe:input source="=learningAction" target="learningAction" />
+          <zeebe:input source="=humanApprovedLearning" target="humanApprovedLearning" />
         </zeebe:ioMapping>
       </bpmn:extensionElements>
       <bpmn:incoming>flow_timer_to_learning</bpmn:incoming>
@@ -51,9 +58,14 @@
     </bpmn:boundaryEvent>
     <bpmn:userTask id="human_technical_escalation" name="Human technical escalation">
       <bpmn:incoming>flow_error_to_human_escalation</bpmn:incoming>
+      <bpmn:incoming>flow_gateway_to_escalation</bpmn:incoming>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="flow_start_to_normalize" sourceRef="start_incident_received" targetRef="pic_rule_normalize_event" />
-    <bpmn:sequenceFlow id="flow_normalize_to_review" sourceRef="pic_rule_normalize_event" targetRef="human_review_disclosure" />
+    <bpmn:sequenceFlow id="flow_normalize_to_gateway" sourceRef="pic_rule_normalize_event" targetRef="gateway_normalization_result" />
+    <bpmn:sequenceFlow id="flow_gateway_to_review" sourceRef="gateway_normalization_result" targetRef="human_review_disclosure">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=normalizationStatus = "normalized"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="flow_gateway_to_escalation" sourceRef="gateway_normalization_result" targetRef="human_technical_escalation" />
     <bpmn:sequenceFlow id="flow_review_to_timer" sourceRef="human_review_disclosure" targetRef="timer_follow_up_due" />
     <bpmn:sequenceFlow id="flow_timer_to_learning" sourceRef="timer_follow_up_due" targetRef="pic_rule_record_learning" />
     <bpmn:sequenceFlow id="flow_learning_to_end" sourceRef="pic_rule_record_learning" targetRef="end_learning_recorded" />
