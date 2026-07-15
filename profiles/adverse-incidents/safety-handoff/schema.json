@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rac-conformance.edithatogo.dev/adverse-incidents/safety-handoff/0.1.0/schema.json",
+  "title": "Adverse-incident aggregate safety handoff 0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["handoffVersion", "permittedPurpose", "aggregation", "jurisdiction", "provenance", "signal", "review", "consumptionStatus", "downstreamAction"],
+  "properties": {
+    "handoffVersion": {"const": "adverse-incident-safety-handoff/0.1.0"},
+    "permittedPurpose": {"enum": ["aggregate-safety-research", "public-safety-signal"]},
+    "aggregation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "minimumCellCount", "patientLevelDataIncluded"],
+      "properties": {
+        "level": {"const": "aggregate"},
+        "minimumCellCount": {"type": "integer", "minimum": 5},
+        "patientLevelDataIncluded": {"const": false}
+      }
+    },
+    "jurisdiction": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceSystem", "sourcePeriod", "sourceAuthority", "sourceReference"],
+      "properties": {
+        "sourceSystem": {"type": "string", "minLength": 1},
+        "sourcePeriod": {"type": "string", "minLength": 1},
+        "sourceAuthority": {"type": "string", "minLength": 1},
+        "sourceReference": {"type": "string", "format": "uri"}
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventClass", "count", "causation", "identifiability"],
+      "properties": {
+        "eventClass": {"enum": ["adverse-event", "near-miss", "complaint", "open-disclosure"]},
+        "count": {"type": "integer", "minimum": 0},
+        "causation": {"const": "not-inferred"},
+        "identifiability": {"const": "aggregate-only"}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewStatus", "reviewer", "reviewReference"],
+      "properties": {
+        "reviewStatus": {"enum": ["pending-human-review", "human-approved", "rejected"]},
+        "reviewer": {"type": ["string", "null"]},
+        "reviewReference": {"type": ["string", "null"]}
+      }
+    },
+    "consumptionStatus": {"enum": ["blocked-until-human-review", "approved-for-consumption"]},
+    "downstreamAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorized", "status"],
+      "properties": {
+        "authorized": {"const": false},
+        "status": {"const": "not-authorized"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"consumptionStatus": {"const": "approved-for-consumption"}}},
+      "then": {"properties": {"review": {"properties": {"reviewStatus": {"const": "human-approved"}}}}}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "handoffVersion": "adverse-incident-safety-handoff/0.1.0",
+  "permittedPurpose": "public-safety-signal",
+  "aggregation": {"level": "aggregate", "minimumCellCount": 10, "patientLevelDataIncluded": false},
+  "jurisdiction": "AU",
+  "provenance": {"sourceSystem": "synthetic", "sourcePeriod": "2026-Q2", "sourceAuthority": "synthetic", "sourceReference": "https://example.invalid/source"},
+  "signal": {"eventClass": "adverse-event", "count": 10, "causation": "product-caused", "identifiability": "aggregate-only"},
+  "review": {"reviewStatus": "pending-human-review", "reviewer": null, "reviewReference": null},
+  "downstreamAction": {"authorized": false, "status": "not-authorized"}
+}

@@ -3,15 +3,18 @@
   "profileVersion": "0.1.0-candidate",
   "method": "agent-proposed",
   "reviewState": "candidate",
+  "projectModel": "PROCESS_PROJECT_MODEL.md",
+  "sourceDiscoveryRequired": true,
   "mappings": [
     {
       "id": "mapping.nz.consumer-informed",
       "jurisdiction": "NZ",
       "kind": "consumer-communication",
       "scenario": "harm",
+      "linkedProcessIds": ["open-disclosure", "review-learning"],
       "sourceAssertionIds": ["assertion.nz.hdc.communication"],
       "actorClasses": ["affected-person-and-support-person", "health-service-organisation"],
-      "humanTasks": ["choose communication format", "confirm understanding"],
+      "humanTasks": ["discover relevant current official policies", "choose communication format", "confirm understanding"],
       "loss": "does not determine the content or adequacy of a particular disclosure",
       "sourceRefs": ["https://www.hdc.org.nz/your-rights/about-the-code/code-of-health-and-disability-services-consumers-rights/"]
     },
@@ -20,21 +23,23 @@
       "jurisdiction": "NZ",
       "kind": "review-learning",
       "scenario": "near-miss",
+      "linkedProcessIds": ["adverse-event-management", "open-disclosure"],
       "sourceAssertionIds": ["assertion.nz.hqsc.review-learning"],
       "actorClasses": ["review-or-clinical-governance-team"],
-      "humanTasks": ["select review approach", "agree learning actions"],
-      "loss": "blocked policy text prevents encoding review obligations",
-      "sourceRefs": ["https://www.hqsc.govt.nz/resources/resource-library/national-adverse-event-policy-2023/"]
+      "humanTasks": ["discover relevant current official policies", "select review approach", "agree learning actions"],
+      "loss": "does not determine clinical causation, severity, reportability, compliance, or adequacy of a particular review response",
+      "sourceRefs": ["https://www.hqsc.govt.nz/assets/Our-work/System-safety/Adverse-events/Publications-resources/AdverseEventsPolicy2023_Eng_Feb24update_WEB.pdf?hash=bf39db6403496651fcfa93ef5c67a13944ac75a2"]
     },
     {
       "id": "mapping.au.open-disclosure",
       "jurisdiction": "AU",
       "kind": "national-framework",
       "scenario": "delayed-recognition",
+      "linkedProcessIds": ["adverse-event-management", "open-disclosure", "jurisdiction-overlay"],
       "sourceAssertionIds": ["assertion.au.framework.disclosure"],
       "actorClasses": ["affected-person-and-support-person", "health-service-organisation"],
-      "humanTasks": ["adapt to state or territory requirements", "agree follow-up"],
-      "loss": "framework has no stated effective date and does not replace state or territory requirements",
+      "humanTasks": ["discover relevant current official policies", "adapt to state or territory requirements", "agree follow-up"],
+      "loss": "framework effective date remains unresolved and it does not replace state or territory requirements",
       "sourceRefs": ["https://www.safetyandquality.gov.au/sites/default/files/2026-06/Australian-Open-Disclosure-Framework_1.pdf"]
     },
     {
@@ -42,9 +47,10 @@
       "jurisdiction": "AU-NSW",
       "kind": "jurisdictional-overlay",
       "scenario": "disputed-facts",
+      "linkedProcessIds": ["adverse-event-management", "review-learning", "jurisdiction-overlay"],
       "sourceAssertionIds": ["assertion.nsw.incident.review"],
       "actorClasses": ["review-or-clinical-governance-team"],
-      "humanTasks": ["confirm applicable NSW review pathway"],
+      "humanTasks": ["discover relevant current official policies", "confirm applicable NSW review pathway"],
       "loss": "blocked directive text prevents encoding reportable incident or review thresholds",
       "sourceRefs": ["https://www1.health.nsw.gov.au/pds/Pages/doc.aspx?dn=PD2020_047"]
     },
@@ -53,9 +59,10 @@
       "jurisdiction": "AU",
       "kind": "unsupported-summary",
       "scenario": "parallel-complaint",
+      "linkedProcessIds": ["complaints-feedback", "open-disclosure"],
       "sourceAssertionIds": ["assertion.secondary.open-disclosure-summary"],
       "actorClasses": ["health-service-organisation"],
-      "humanTasks": [],
+      "humanTasks": ["discover relevant current official policies"],
       "loss": "secondary material cannot support a controlling obligation",
       "sourceRefs": ["https://example.invalid/secondary-summary"]
     },
@@ -64,9 +71,10 @@
       "jurisdiction": "AU-NSW",
       "kind": "local-procedure",
       "scenario": "local-escalation",
+      "linkedProcessIds": ["jurisdiction-overlay", "adverse-event-management"],
       "sourceAssertionIds": [],
       "actorClasses": ["health-service-organisation"],
-      "humanTasks": ["name local owner and source"],
+      "humanTasks": ["discover relevant current official policies", "name local owner and source"],
       "loss": "local escalation owner and procedure are not specified by a controlling source",
       "sourceRefs": []
     }

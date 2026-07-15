@@ -23,3 +23,11 @@ python tools/adverse_incident_triangulation.py \
 
 The output is a proposal packet only. `agent-proposed` assertions and
 dispositions cannot certify a legal, clinical, or organisational obligation.
+
+Synthetic process-profile candidates are generated into
+`candidates/process-profiles/` by `tools/generate_adverse_incident_fixtures.py`.
+They contain no incident facts and are not golden fixtures.
+
+The optional aggregate safety handoff is defined under `safety-handoff/`.
+It permits only aggregate, provenance-bearing signals for an explicit purpose;
+it excludes patient-level data, inferred causation, and downstream action.

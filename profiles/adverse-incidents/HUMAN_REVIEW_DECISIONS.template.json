@@ -1,0 +1,75 @@
+{
+  "profileId": "adverse-incidents/open-disclosure",
+  "status": "partially-reviewed",
+  "reviewer": "Dylan Mordaunt",
+  "reviewedAt": "2026-07-15",
+  "projectModel": "PROCESS_PROJECT_MODEL.md",
+  "decisions": [
+    {
+      "mappingId": "mapping.nz.consumer-informed",
+      "decision": "approved",
+      "sourceRef": "https://www.hdc.org.nz/your-rights/about-the-code/code-of-health-and-disability-services-consumers-rights/",
+      "sourceDigest": "cf68019c860a1cd5bf462d6e501d4cca9702d57f8eb4974d53d11a2820c20761",
+      "jurisdiction": "NZ",
+      "effectiveDateBasis": "1996-07-01; official HDC Code page reviewed 2026-07-15",
+      "permittedInterpretation": "Human-controlled communication format, language, manner, understanding, support-person, and cultural-consideration tasks.",
+      "excludedInterpretation": "Do not infer disclosure adequacy or legal compliance.",
+      "followUpSourceRequest": null
+    },
+    {
+      "mappingId": "mapping.nz.review-learning",
+      "decision": "approved",
+      "sourceRef": "https://www.hqsc.govt.nz/assets/Our-work/System-safety/Adverse-events/Publications-resources/AdverseEventsPolicy2023_Eng_Feb24update_WEB.pdf?hash=bf39db6403496651fcfa93ef5c67a13944ac75a2",
+      "sourceDigest": "0975b3c880b6e9c3a49bef53a8e69506246232bb4f115813edd57db22c989ef2",
+      "jurisdiction": "NZ",
+      "effectiveDateBasis": "2023-07-01; official HQSC page and PDF reviewed 2026-07-15",
+      "permittedInterpretation": "Human-selected review approach, consumer and whānau participation, feedback on draft findings, and human-agreed learning actions.",
+      "excludedInterpretation": "Does not encode clinical causation, severity, reportability, organisational compliance, or adequacy of a particular review response.",
+      "followUpSourceRequest": null
+    },
+    {
+      "mappingId": "mapping.au.open-disclosure",
+      "decision": "approved",
+      "sourceRef": "https://www.safetyandquality.gov.au/sites/default/files/2026-06/Australian-Open-Disclosure-Framework_1.pdf",
+      "sourceDigest": "d0d3e5ce3b2cd470707c956157d99c723847c802ef706a65ce2b9fa54aec0fac",
+      "jurisdiction": "AU",
+      "effectiveDateBasis": "Not stated in the reviewed framework; published June 2026; effective-date boundary retained.",
+      "permittedInterpretation": "Human-controlled relational open-disclosure process, proportionate response, support and accessibility choices, follow-up, and learning, subject to current jurisdictional and local source discovery.",
+      "excludedInterpretation": "Not legislation, not a universal legal obligation, not a substitute for state or territory requirements, and not an automated disclosure decision.",
+      "followUpSourceRequest": "Search and verify current state, territory, and local policies before jurisdiction-specific implementation."
+    },
+    {
+      "mappingId": "mapping.nsw.incident-review",
+      "decision": "approved",
+      "sourceRef": "https://cec.health.nsw.gov.au/Review-incidents/incident-management-policy-resources",
+      "sourceDigest": null,
+      "jurisdiction": "AU-NSW",
+      "effectiveDateBasis": "14 December 2020 commencement confirmed on official CEC resource page; controlling directive text remains blocked.",
+      "permittedInterpretation": "Project-level human-controlled source discovery, NSW review-pathway selection, reporting, learning, and escalation as linked but distinct processes.",
+      "excludedInterpretation": "Does not encode reportability thresholds, harm scores, mandatory classifications, legal or clinical conclusions, or NSW compliance.",
+      "followUpSourceRequest": "Verify PD2020_047 and current related NSW policy overlays before implementation."
+    },
+    {
+      "mappingId": "mapping.au.secondary-summary",
+      "decision": "rejected",
+      "sourceRef": "https://example.invalid/secondary-summary",
+      "sourceDigest": null,
+      "jurisdiction": "AU",
+      "effectiveDateBasis": "Not applicable; secondary-only evidence rejected.",
+      "permittedInterpretation": "Negative example showing that secondary-only material must not support a controlling obligation.",
+      "excludedInterpretation": "Secondary-only evidence cannot support a controlling obligation.",
+      "followUpSourceRequest": "Replace with a verified primary source only if the process question remains in scope."
+    },
+    {
+      "mappingId": "mapping.local.escalation",
+      "decision": "approved-unresolved",
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "AU-NSW",
+      "effectiveDateBasis": "Not applicable until a specific service context and controlling local source are identified.",
+      "permittedInterpretation": "Human task to identify the applicable local owner and procedure after project and jurisdiction source discovery.",
+      "excludedInterpretation": "Do not invent a local escalation owner, procedure, or compliance conclusion.",
+      "followUpSourceRequest": "Supply the service context and controlling local source, or retain unresolved."
+    }
+  ]
+}

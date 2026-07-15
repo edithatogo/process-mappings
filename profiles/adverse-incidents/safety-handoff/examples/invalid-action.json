@@ -1,0 +1,10 @@
+{
+  "handoffVersion": "adverse-incident-safety-handoff/0.1.0",
+  "permittedPurpose": "aggregate-safety-research",
+  "aggregation": {"level": "aggregate", "minimumCellCount": 10, "patientLevelDataIncluded": false},
+  "jurisdiction": "AU-NSW",
+  "provenance": {"sourceSystem": "synthetic", "sourcePeriod": "2026-Q2", "sourceAuthority": "synthetic", "sourceReference": "https://example.invalid/source"},
+  "signal": {"eventClass": "complaint", "count": 10, "causation": "not-inferred", "identifiability": "aggregate-only"},
+  "review": {"reviewStatus": "pending-human-review", "reviewer": null, "reviewReference": null},
+  "downstreamAction": {"authorized": true, "status": "execute-remediation"}
+}

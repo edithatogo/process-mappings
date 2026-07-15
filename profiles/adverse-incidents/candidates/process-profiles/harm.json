@@ -1,0 +1,106 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {
+    "id": "adverse-incidents/harm",
+    "version": "0.1.0-candidate",
+    "jurisdiction": "NZ"
+  },
+  "case": {
+    "id": "case:adverse-incidents/harm",
+    "synthetic": true
+  },
+  "states": [
+    {
+      "id": "state:harm:detected",
+      "kind": "observed"
+    },
+    {
+      "id": "state:harm:review",
+      "kind": "proposed"
+    },
+    {
+      "id": "state:harm:closed",
+      "kind": "proposed"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:harm:detected",
+      "kind": "observed",
+      "stateId": "state:harm:detected",
+      "occurredAt": "2026-07-01T00:00:00Z",
+      "observedAt": "2026-07-01T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-harm"
+    },
+    {
+      "id": "event:harm:review-closed",
+      "kind": "certified_human",
+      "stateId": "state:harm:closed",
+      "occurredAt": "2026-07-03T00:00:00Z",
+      "observedAt": "2026-07-03T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-harm"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition:harm:review",
+      "fromStateId": "state:harm:detected",
+      "toStateId": "state:harm:review",
+      "eventId": "event:harm:detected"
+    },
+    {
+      "id": "transition:harm:closed",
+      "fromStateId": "state:harm:review",
+      "toStateId": "state:harm:closed",
+      "eventId": "event:harm:review-closed"
+    }
+  ],
+  "actors": [
+    {
+      "id": "person:synthetic-reviewer-harm",
+      "kind": "person",
+      "label": "Synthetic human reviewer"
+    }
+  ],
+  "humanTasks": [
+    {
+      "id": "task:harm:review",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-harm",
+      "stateId": "state:harm:review"
+    },
+    {
+      "id": "task:harm:culturally-responsive-participation-support",
+      "kind": "human_decision",
+      "actorId": "person:synthetic-reviewer-harm",
+      "stateId": "state:harm:review"
+    },
+    {
+      "id": "task:harm:unresolved-questions",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-harm",
+      "stateId": "state:harm:review"
+    }
+  ],
+  "sourceAssertions": [
+    {
+      "id": "assertion:nz-hdc-code-consumers-rights:harm",
+      "authorityClass": "regulation",
+      "reviewerState": "agent-proposed",
+      "sourceStatus": "current",
+      "effectiveFrom": "1996-07-01",
+      "effectiveTo": null,
+      "jurisdiction": "NZ",
+      "sourceRef": "https://www.hdc.org.nz/your-rights/about-the-code/code-of-health-and-disability-services-consumers-rights/",
+      "controlling": false,
+      "interpretationState": "uninterpreted"
+    }
+  ],
+  "traceLinks": [
+    {
+      "id": "trace-link:harm",
+      "traceConformsTo": "pic-traces/0.1.0",
+      "traceRef": "urn:sha256:6650a71513c7a5303868d437899bd37034c8b60297223047f84cdf836370d439"
+    }
+  ]
+}

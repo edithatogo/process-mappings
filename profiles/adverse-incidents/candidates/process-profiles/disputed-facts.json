@@ -1,0 +1,106 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {
+    "id": "adverse-incidents/disputed-facts",
+    "version": "0.1.0-candidate",
+    "jurisdiction": "AU-NSW"
+  },
+  "case": {
+    "id": "case:adverse-incidents/disputed-facts",
+    "synthetic": true
+  },
+  "states": [
+    {
+      "id": "state:disputed-facts:detected",
+      "kind": "observed"
+    },
+    {
+      "id": "state:disputed-facts:review",
+      "kind": "proposed"
+    },
+    {
+      "id": "state:disputed-facts:closed",
+      "kind": "proposed"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:disputed-facts:detected",
+      "kind": "observed",
+      "stateId": "state:disputed-facts:detected",
+      "occurredAt": "2026-07-01T00:00:00Z",
+      "observedAt": "2026-07-01T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-disputed-facts"
+    },
+    {
+      "id": "event:disputed-facts:review-closed",
+      "kind": "certified_human",
+      "stateId": "state:disputed-facts:closed",
+      "occurredAt": "2026-07-03T00:00:00Z",
+      "observedAt": "2026-07-03T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-disputed-facts"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition:disputed-facts:review",
+      "fromStateId": "state:disputed-facts:detected",
+      "toStateId": "state:disputed-facts:review",
+      "eventId": "event:disputed-facts:detected"
+    },
+    {
+      "id": "transition:disputed-facts:closed",
+      "fromStateId": "state:disputed-facts:review",
+      "toStateId": "state:disputed-facts:closed",
+      "eventId": "event:disputed-facts:review-closed"
+    }
+  ],
+  "actors": [
+    {
+      "id": "person:synthetic-reviewer-disputed-facts",
+      "kind": "person",
+      "label": "Synthetic human reviewer"
+    }
+  ],
+  "humanTasks": [
+    {
+      "id": "task:disputed-facts:review",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-disputed-facts",
+      "stateId": "state:disputed-facts:review"
+    },
+    {
+      "id": "task:disputed-facts:culturally-responsive-participation-support",
+      "kind": "human_decision",
+      "actorId": "person:synthetic-reviewer-disputed-facts",
+      "stateId": "state:disputed-facts:review"
+    },
+    {
+      "id": "task:disputed-facts:unresolved-questions",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-disputed-facts",
+      "stateId": "state:disputed-facts:review"
+    }
+  ],
+  "sourceAssertions": [
+    {
+      "id": "assertion:nsw-incident-management-pd2020-047:disputed-facts",
+      "authorityClass": "regional_policy",
+      "reviewerState": "agent-proposed",
+      "sourceStatus": "current",
+      "effectiveFrom": "2020-12-14",
+      "effectiveTo": null,
+      "jurisdiction": "AU-NSW",
+      "sourceRef": "https://www1.health.nsw.gov.au/pds/Pages/doc.aspx?dn=PD2020_047",
+      "controlling": false,
+      "interpretationState": "uninterpreted"
+    }
+  ],
+  "traceLinks": [
+    {
+      "id": "trace-link:disputed-facts",
+      "traceConformsTo": "pic-traces/0.1.0",
+      "traceRef": "urn:sha256:017fa67162ee078b3fa3bf97116da71aed9551c268300143cecf6e17e415a29e"
+    }
+  ]
+}

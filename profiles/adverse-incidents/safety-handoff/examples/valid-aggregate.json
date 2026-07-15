@@ -1,0 +1,32 @@
+{
+  "handoffVersion": "adverse-incident-safety-handoff/0.1.0",
+  "permittedPurpose": "aggregate-safety-research",
+  "aggregation": {
+    "level": "aggregate",
+    "minimumCellCount": 10,
+    "patientLevelDataIncluded": false
+  },
+  "jurisdiction": "NZ",
+  "provenance": {
+    "sourceSystem": "synthetic-process-profile-corpus",
+    "sourcePeriod": "2026-Q2",
+    "sourceAuthority": "agent-proposed synthetic study artifact",
+    "sourceReference": "https://rac-conformance.edithatogo.dev/adverse-incidents/synthetic"
+  },
+  "signal": {
+    "eventClass": "near-miss",
+    "count": 10,
+    "causation": "not-inferred",
+    "identifiability": "aggregate-only"
+  },
+  "review": {
+    "reviewStatus": "pending-human-review",
+    "reviewer": null,
+    "reviewReference": null
+  },
+  "consumptionStatus": "blocked-until-human-review",
+  "downstreamAction": {
+    "authorized": false,
+    "status": "not-authorized"
+  }
+}

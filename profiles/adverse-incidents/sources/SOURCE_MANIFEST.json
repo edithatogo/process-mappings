@@ -11,14 +11,14 @@
       "jurisdiction": "NZ",
       "issuer": "Health Quality & Safety Commission Te Tahu Hauora",
       "authorityClass": "national-policy",
-      "url": "https://www.hqsc.govt.nz/resources/resource-library/national-adverse-event-policy-2023/",
+      "url": "https://www.hqsc.govt.nz/assets/Our-work/System-safety/Adverse-events/Publications-resources/AdverseEventsPolicy2023_Eng_Feb24update_WEB.pdf?hash=bf39db6403496651fcfa93ef5c67a13944ac75a2",
       "effectiveFrom": "2023-07-01",
       "publicationDate": "2024-02-27",
-      "sourceStatus": "official-page-verified-download-blocked",
-      "retrievalNote": "Official page and policy identity verified; direct PDF retrieval returned HTTP 403 in this environment.",
-      "digest": null,
+      "sourceStatus": "official-pdf-retrieved",
+      "retrievalNote": "Official HQSC resource page and primary PDF retrieved; PDF publication identifies a February 2024 update and the official page states the policy takes effect from 1 July 2023.",
+      "digest": "sha256:0975b3c880b6e9c3a49bef53a8e69506246232bb4f115813edd57db22c989ef2",
       "rights": "official-source-referenced-not-vendored",
-      "reviewerState": "agent-proposed"
+      "reviewerState": "human-approved"
     },
     {
       "id": "nz-hdc-code-consumers-rights",
@@ -32,7 +32,7 @@
       "sourceStatus": "official-html-retrieved",
       "digest": "sha256:cf68019c860a1cd5bf462d6e501d4cca9702d57f8eb4974d53d11a2820c20761",
       "rights": "official-source-referenced-not-vendored",
-      "reviewerState": "agent-proposed"
+      "reviewerState": "human-approved"
     },
     {
       "id": "au-open-disclosure-framework-2026",
@@ -47,7 +47,7 @@
       "retrievalNote": "Effective-date field is intentionally unresolved; the framework itself directs alignment with applicable state and territory requirements.",
       "digest": "sha256:d0d3e5ce3b2cd470707c956157d99c723847c802ef706a65ce2b9fa54aec0fac",
       "rights": "CC-BY-NC-ND-4.0-source-reference-only",
-      "reviewerState": "agent-proposed"
+      "reviewerState": "human-approved"
     },
     {
       "id": "au-nsqhs-action-1-12",
@@ -96,7 +96,6 @@
     }
   ],
   "blockedSources": [
-    "nz-hqsc-national-adverse-events-policy-2023",
     "nsw-incident-management-pd2020-047",
     "nsw-open-disclosure-pd2023-034"
   ],

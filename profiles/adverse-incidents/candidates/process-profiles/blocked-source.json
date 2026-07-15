@@ -1,0 +1,106 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {
+    "id": "adverse-incidents/blocked-source",
+    "version": "0.1.0-candidate",
+    "jurisdiction": "NZ"
+  },
+  "case": {
+    "id": "case:adverse-incidents/blocked-source",
+    "synthetic": true
+  },
+  "states": [
+    {
+      "id": "state:blocked-source:detected",
+      "kind": "observed"
+    },
+    {
+      "id": "state:blocked-source:review",
+      "kind": "proposed"
+    },
+    {
+      "id": "state:blocked-source:closed",
+      "kind": "proposed"
+    }
+  ],
+  "events": [
+    {
+      "id": "event:blocked-source:detected",
+      "kind": "observed",
+      "stateId": "state:blocked-source:detected",
+      "occurredAt": "2026-07-01T00:00:00Z",
+      "observedAt": "2026-07-01T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-blocked-source"
+    },
+    {
+      "id": "event:blocked-source:review-closed",
+      "kind": "certified_human",
+      "stateId": "state:blocked-source:closed",
+      "occurredAt": "2026-07-03T00:00:00Z",
+      "observedAt": "2026-07-03T00:00:00Z",
+      "actorId": "person:synthetic-reviewer-blocked-source"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition:blocked-source:review",
+      "fromStateId": "state:blocked-source:detected",
+      "toStateId": "state:blocked-source:review",
+      "eventId": "event:blocked-source:detected"
+    },
+    {
+      "id": "transition:blocked-source:closed",
+      "fromStateId": "state:blocked-source:review",
+      "toStateId": "state:blocked-source:closed",
+      "eventId": "event:blocked-source:review-closed"
+    }
+  ],
+  "actors": [
+    {
+      "id": "person:synthetic-reviewer-blocked-source",
+      "kind": "person",
+      "label": "Synthetic human reviewer"
+    }
+  ],
+  "humanTasks": [
+    {
+      "id": "task:blocked-source:review",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-blocked-source",
+      "stateId": "state:blocked-source:review"
+    },
+    {
+      "id": "task:blocked-source:culturally-responsive-participation-support",
+      "kind": "human_decision",
+      "actorId": "person:synthetic-reviewer-blocked-source",
+      "stateId": "state:blocked-source:review"
+    },
+    {
+      "id": "task:blocked-source:unresolved-questions",
+      "kind": "human_review",
+      "actorId": "person:synthetic-reviewer-blocked-source",
+      "stateId": "state:blocked-source:review"
+    }
+  ],
+  "sourceAssertions": [
+    {
+      "id": "assertion:nz-hqsc-national-adverse-events-policy-2023:blocked-source",
+      "authorityClass": "national_policy",
+      "reviewerState": "agent-proposed",
+      "sourceStatus": "blocked",
+      "effectiveFrom": "2023-07-01",
+      "effectiveTo": null,
+      "jurisdiction": "NZ",
+      "sourceRef": "https://www.hqsc.govt.nz/resources/resource-library/national-adverse-event-policy-2023/",
+      "controlling": false,
+      "interpretationState": "uninterpreted"
+    }
+  ],
+  "traceLinks": [
+    {
+      "id": "trace-link:blocked-source",
+      "traceConformsTo": "pic-traces/0.1.0",
+      "traceRef": "urn:sha256:0c1bdbd35e7356cc9b17d21602b4669b8c2a97ff38c80fce2c784833cb2a8416"
+    }
+  ]
+}
