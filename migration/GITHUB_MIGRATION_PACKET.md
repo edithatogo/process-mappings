@@ -1,7 +1,11 @@
 # Proposed GitHub Migration Packet
 
-Status: **draft for human cutover review**. No remote repository has been
-created and no hosted setting in this packet is asserted as configured.
+Status: **deferred by human decision on 2026-07-16**. No remote repository has
+been created and no hosted setting in this packet is asserted as configured.
+
+The active decision is recorded in
+[`DEFERRED_CUTOVER_DECISION.md`](DEFERRED_CUTOVER_DECISION.md). This packet
+remains the preparation record if the reconsideration triggers are later met.
 
 ## Destination
 
