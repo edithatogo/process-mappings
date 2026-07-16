@@ -1,0 +1,34 @@
+{
+  "profileId": "health-technology/regulator-hta-funder",
+  "version": "0.1.0-candidate",
+  "method": "deterministic-data-driven-adjudication-rules",
+  "status": "candidate-not-certified",
+  "controllingReviewerStates": ["official-primary", "human-approved"],
+  "nonControllingReviewerStates": ["agent-proposed", "secondary"],
+  "requiredFields": ["jurisdiction", "authorityId", "functionId", "medicine", "indicationBoundary", "effectiveDate", "sourceStatus", "reviewerState"],
+  "exceptionReasons": [
+    "blocked official source",
+    "conflicting primary sources",
+    "missing effective date",
+    "fixture assumption underspecified",
+    "secondary-source-only evidence",
+    "authority-function mismatch",
+    "jurisdiction or indication mismatch",
+    "confidential evidence unavailable"
+  ],
+  "dispositions": [
+    {"id": "confirmed_process_fact", "requiresControllingAssertion": true, "allowsFixturePromotion": false},
+    {"id": "expected_modeling_difference", "requiresControllingAssertion": true, "allowsFixturePromotion": false},
+    {"id": "fixture_adapter_issue", "requiresControllingAssertion": false, "allowsFixturePromotion": false},
+    {"id": "needs_more_source_review", "requiresControllingAssertion": false, "allowsFixturePromotion": false}
+  ],
+  "precedence": [
+    "missing assertion or underspecified fixture",
+    "authority or jurisdiction mismatch",
+    "blocked, unavailable, conflicting, stale, or undated source",
+    "secondary-only evidence",
+    "controlling assertion eligibility",
+    "proposed disposition"
+  ],
+  "promotionBoundary": "No candidate mapping or fixture may be promoted by the resolver."
+}

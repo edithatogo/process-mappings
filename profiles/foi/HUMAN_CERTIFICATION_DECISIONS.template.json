@@ -1,0 +1,27 @@
+{
+  "profileId": "foi/nz-oia",
+  "profileVersion": "0.1.0-candidate",
+  "status": "pending-human-certification",
+  "reviewer": null,
+  "reviewDate": null,
+  "decisions": [
+    {"id": "map.request.received", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "map.response.deadline", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "map.transfer.deadline", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "map.extension", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "map.deemed.refusal", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "map.review", "kind": "mapping", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "source.foio-oia-rules-design", "kind": "source-assertion", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "source.foio-oia-traces", "kind": "source-assertion", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null},
+    {"id": "source.oia-1982-primary-notes", "kind": "source-assertion", "outcome": "pending", "scopeLimit": null, "exceptionReasons": [], "sourceDigest": null, "notes": null}
+  ],
+  "allowedOutcomes": ["approve-bounded", "limit", "reject", "defer"],
+  "allowedExceptionReasons": [
+    "blocked official source",
+    "conflicting primary sources",
+    "missing effective date",
+    "fixture assumption underspecified",
+    "secondary-source-only evidence"
+  ],
+  "promotionStatement": "No fixture is promoted by this template. A human certification record and separate fixture approval are required."
+}
