@@ -1,0 +1,50 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "profileId": "foi-o/process.nz-oia-candidate",
+  "profileVersion": "0.1.0",
+  "processDefinitionVersion": "0.8.1",
+  "jurisdiction": "NZ",
+  "applicableAt": "2025-04-05T00:00:00Z",
+  "observedAt": "2026-07-17T00:00:00Z",
+  "sourceAssertions": [{"id": "foi-o/source/oia.official", "authority": "law", "sourceType": "official_primary", "reviewStatus": "official-primary", "assertion": "The Official Information Act 1982 official consolidation is the source spine for the OIA process profile.", "sourceUri": "https://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html", "retrievedAt": "2026-07-17T00:00:00Z", "effectiveFrom": "2025-04-05", "effectiveTo": null, "controlling": true}],
+  "actors": [
+    {"id": "system/intake", "kind": "system", "name": "Intake system", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "role/caseworker", "kind": "role", "name": "Caseworker", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "role/decision-maker", "kind": "role", "name": "Decision-maker", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/rules", "kind": "system", "name": "FOI-O deterministic rules", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]}
+  ],
+  "states": [
+    {"id": "foi-o/state/request.received", "kind": "initial", "label": "Request observed", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.transfer-assessed", "kind": "intermediate", "label": "Transfer assessed", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.transferred", "kind": "intermediate", "label": "Transfer notified", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.extension-assessed", "kind": "intermediate", "label": "Extension assessed", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.extended", "kind": "intermediate", "label": "Extension notified", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.deadline-calculated", "kind": "intermediate", "label": "Deadline calculated", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.overdue-flagged", "kind": "intermediate", "label": "Overdue flagged", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/state/request.reviewable", "kind": "intermediate", "label": "Potentially reviewable outcome flagged", "sourceAssertionIds": ["foi-o/source/oia.official"]}
+  ],
+  "events": [
+    {"id": "foi-o/event/request.observed", "kind": "observed_event", "eventType": "RequestObserved", "occurredAt": "2026-07-15T01:00:00Z", "observedAt": "2026-07-15T01:00:01Z", "actorId": "system/intake", "sourceAssertionIds": ["foi-o/source/oia.official"], "evidenceReferenceIds": ["foi-o/evidence/clock-fixtures"]},
+    {"id": "foi-o/event/transfer.assessed", "kind": "executed_action", "eventType": "TransferAssessed", "occurredAt": "2026-07-15T01:30:00Z", "observedAt": "2026-07-15T01:30:01Z", "actorId": "role/caseworker", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/request.transferred", "kind": "executed_action", "eventType": "TransferNotified", "occurredAt": "2026-07-15T02:00:00Z", "observedAt": "2026-07-15T02:00:01Z", "actorId": "role/caseworker", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/deadline.calculated", "kind": "derived_state", "eventType": "DeadlineCalculated", "occurredAt": "2026-07-15T02:01:00Z", "observedAt": "2026-07-15T02:01:01Z", "actorId": "foi-o/rules", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/extension.assessed", "kind": "executed_action", "eventType": "ExtensionAssessed", "occurredAt": "2026-07-16T01:00:00Z", "observedAt": "2026-07-16T01:00:01Z", "actorId": "role/caseworker", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/response.extended", "kind": "executed_action", "eventType": "ExtensionNotified", "occurredAt": "2026-07-16T02:00:00Z", "observedAt": "2026-07-16T02:00:01Z", "actorId": "role/caseworker", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/response.overdue", "kind": "derived_state", "eventType": "OverdueFlagged", "occurredAt": "2026-07-17T02:00:00Z", "observedAt": "2026-07-17T02:00:01Z", "actorId": "foi-o/rules", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/event/decision.communicated", "kind": "observed_event", "eventType": "DecisionCommunicated", "occurredAt": "2026-07-18T02:00:00Z", "observedAt": "2026-07-18T02:00:01Z", "actorId": "role/decision-maker", "sourceAssertionIds": ["foi-o/source/oia.official"]}
+  ],
+  "timers": [{"id": "foi-o/timer/response.deadline", "kind": "working_day_duration", "name": "Twenty working day response period", "startEventId": "foi-o/event/request.observed", "duration": "20 working_days", "calendarId": "nz-oia/working-day-calendar", "sourceAssertionIds": ["foi-o/source/oia.official"]}],
+  "transitions": [
+    {"id": "foi-o/transition/received.transfer-assessed", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.transfer-assessed", "triggerEventId": "foi-o/event/transfer.assessed", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/transfer-assessed.transferred", "fromStateId": "foi-o/state/request.transfer-assessed", "toStateId": "foi-o/state/request.transferred", "triggerEventId": "foi-o/event/request.transferred", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/received.deadline-calculated", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.deadline-calculated", "triggerEventId": "foi-o/event/deadline.calculated", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/received.extension-assessed", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.extension-assessed", "triggerEventId": "foi-o/event/extension.assessed", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/extension-assessed.extended", "fromStateId": "foi-o/state/request.extension-assessed", "toStateId": "foi-o/state/request.extended", "triggerEventId": "foi-o/event/response.extended", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/deadline.overdue", "fromStateId": "foi-o/state/request.deadline-calculated", "toStateId": "foi-o/state/request.overdue-flagged", "triggerEventId": "foi-o/event/response.overdue", "sourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/transition/overdue.reviewable", "fromStateId": "foi-o/state/request.overdue-flagged", "toStateId": "foi-o/state/request.reviewable", "triggerEventId": "foi-o/event/response.overdue", "sourceAssertionIds": ["foi-o/source/oia.official"]}
+  ],
+  "tasks": [],
+  "ruleInvocations": [],
+  "evidenceReferences": [{"id": "foi-o/evidence/clock-fixtures", "uri": "urn:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "sourceAssertionIds": ["foi-o/source/oia.official"]}],
+  "traces": [{"id": "foi-o/trace/candidate.1", "traceContract": "pic-traces/0.2.0", "artifactRef": "external/foi-o/rules/traces/response-deadline", "eventIds": ["foi-o/event/request.observed", "foi-o/event/transfer.assessed", "foi-o/event/request.transferred", "foi-o/event/deadline.calculated", "foi-o/event/extension.assessed", "foi-o/event/response.extended", "foi-o/event/response.overdue", "foi-o/event/decision.communicated"], "ruleInvocationIds": [], "equivalenceClaim": "path", "lossNotes": ["PIC retains the FOI-O CoreEvent vocabulary used by the staged crosswalk but does not encode the FOI-O ontology class hierarchy.", "OverdueFlagged is a deterministic signal and is not itself an Ombudsman review outcome, legal refusal conclusion, or certified human decision.", "Extension and urgency reasonableness, discretion, and human review remain outside the deterministic profile.", "The candidate trace is a comparison projection; source-specific payload fields remain in FOI-O and are not inferred here."]}]
+}

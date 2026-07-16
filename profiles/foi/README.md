@@ -9,14 +9,15 @@ evidence into released PIC process-profile contracts.
 - This profile records compatibility, provenance, and representational loss; it
   does not reinterpret FOI law or become a runtime dependency of either repo.
 
-No FOI mapping is implemented yet.
+The first mapping is an `agent-proposed` candidate under
+`candidates/nz-oia-process-profile.json`. It covers request receipt, transfer,
+extension, refusal, and reviewability using the platform-neutral profile. It is
+not promoted or authoritative; review boundaries are recorded in
+`CANDIDATE_REVIEW.md`.
 
-The current candidate corpus is intentionally not an implementation or
-certified fixture. `PROFILE_CANDIDATES.json` records agent-proposed mappings,
-source references, and representational loss. `SOURCE_MANIFEST.json` pins the
-process-profile contract to commit `689ab20` and marks inherited primary-source
-notes as not live-verified. Human certification is required before promotion.
-
-The row-level review worksheet is
-`HUMAN_CERTIFICATION_PACKET.md`; it records bounded outcomes and exceptions
-without promoting candidate mappings.
+The current integration boundary is recorded in
+`../../schemas/contract-consumption.json` (relative to this profile). It
+does not promote any FOI-O or foi-process artifact to a legal or normative
+authority: FOI-O supplies semantic input, while foi-process supplies execution
+and evidence input. Any representational loss must be recorded before a
+profile can be proposed.

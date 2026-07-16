@@ -3,8 +3,8 @@
     "conformsTo": "pic-process-profile/0.1.0",
     "repository": "edithatogo/rac-conformance",
     "schemaPath": "contracts/process-profile/0.1.0/schema.json",
-    "commit": "d4be00911858437afbc0846ee0a5d01bbfa3e669",
-    "schemaSha256": "b41cd3a56d003817d75aac779b54ece9c8d1b36cb68cfcdca16bd43d7b3bb635"
+    "commit": "54d6c93b78859de5acbd08ef533ec9eb8b3a31cd",
+    "schemaSha256": "cad9bd4b41da6745ee3ee8bd6ec46b68cd3160e368ecbfda6ee8e4fd84dffa77"
   },
   "examples": [
     "contracts/process-profile/0.1.0/examples/valid/foi-oia.json",
