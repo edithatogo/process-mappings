@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "health-technology-authority-matrix.v0.1.0",
+  "status": "architecture",
+  "epistemicPolicy": "Only source assertions with official primary evidence or human approval may control a candidate mapping.",
+  "jurisdictions": [
+    {
+      "id": "nz",
+      "name": "New Zealand",
+      "authorities": [
+        {"id": "medsafe", "name": "Medsafe", "roles": ["market_authorisation", "post_market_monitoring"], "outputs": ["medicine_approval", "safety_action"]},
+        {"id": "pharmac", "name": "Pharmac", "roles": ["hta_advice", "funding_decision", "pricing_negotiation", "listing", "restriction", "exception_access"], "outputs": ["funding_recommendation", "funding_decision", "formulary_listing", "restriction", "exception_decision"]}
+      ]
+    },
+    {
+      "id": "au",
+      "name": "Australia",
+      "authorities": [
+        {"id": "tga", "name": "Therapeutic Goods Administration", "roles": ["market_authorisation", "post_market_monitoring"], "outputs": ["artg_entry", "safety_action"]},
+        {"id": "pbac", "name": "Pharmaceutical Benefits Advisory Committee", "roles": ["hta_advice"], "outputs": ["listing_advice"]},
+        {"id": "pbs", "name": "Pharmaceutical Benefits Scheme", "roles": ["funding_decision", "pricing_negotiation", "listing", "restriction"], "outputs": ["pbs_listing", "restriction"]},
+        {"id": "msac", "name": "Medical Services Advisory Committee", "roles": ["hta_advice"], "outputs": ["service_funding_advice"]},
+        {"id": "mbs", "name": "Medicare Benefits Schedule", "roles": ["service_funding", "listing", "restriction"], "outputs": ["mbs_item", "restriction"]}
+      ]
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "authorities": [
+        {"id": "mhra", "name": "Medicines and Healthcare products Regulatory Agency", "roles": ["market_authorisation", "post_market_monitoring"], "outputs": ["marketing_authorisation", "safety_action"]},
+        {"id": "nice", "name": "National Institute for Health and Care Excellence", "roles": ["hta_advice", "funding_guidance", "restriction"], "outputs": ["technology_appraisal_guidance", "recommendation", "restriction"]}
+      ]
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "authorities": [
+        {"id": "fda", "name": "Food and Drug Administration", "roles": ["market_authorisation", "post_market_monitoring"], "outputs": ["approval", "label_action", "safety_action"]},
+        {"id": "cms", "name": "Centers for Medicare & Medicaid Services", "roles": ["payer_coverage", "restriction"], "outputs": ["coverage_determination", "national_coverage_decision"]},
+        {"id": "us_payer", "name": "Jurisdiction-specific or private US payer", "roles": ["payer_coverage", "restriction"], "outputs": ["coverage_policy", "prior_authorisation"]}
+      ]
+    }
+  ],
+  "nonEquivalenceRules": [
+    {"id": "fda-is-not-payer", "forbid": {"authority": "fda", "role": "payer_coverage"}},
+    {"id": "mbs-is-not-medicine-regulator", "forbid": {"authority": "mbs", "role": "market_authorisation"}},
+    {"id": "msac-is-not-pbs", "forbid": {"authority": "msac", "role": "medicine_listing"}},
+    {"id": "authorisation-is-not-funding", "forbid": {"role": "market_authorisation", "implies": "funding_decision"}},
+    {"id": "advice-is-not-decision", "forbid": {"role": "hta_advice", "implies": "funding_decision"}}
+  ]
+}

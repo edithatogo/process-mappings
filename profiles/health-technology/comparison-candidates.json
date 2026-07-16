@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "health-technology-comparison-candidates.v0.1.0",
+  "selection": "none",
+  "reason": "No candidate is selected until direct source capture, effective dates, and a human-approved jurisdiction pair are available.",
+  "candidates": [
+    {"id":"nz-au-medicine","jurisdictions":["nz","au"],"sourceCompleteness":"partial","temporalAlignment":"unverified","indicationAlignment":"unselected","publicDecisionEvidence":"partial","rights":"official-public-candidates","method":"ai-proposed","status":"deferred"},
+    {"id":"uk-us-medicine","jurisdictions":["uk","us"],"sourceCompleteness":"partial","temporalAlignment":"unverified","indicationAlignment":"unselected","publicDecisionEvidence":"partial","rights":"official-public-candidates","method":"ai-proposed","status":"deferred"}
+  ]
+}

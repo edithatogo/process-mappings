@@ -1,0 +1,30 @@
+name: Process profile
+description: Propose a source-backed domain or jurisdiction profile.
+title: "profile: "
+labels:
+  - profile
+body:
+  - type: markdown
+    attributes:
+      value: "Profiles are evidence-bearing proposals, not legal, clinical, regulatory, or funding advice."
+  - type: input
+    id: consumer
+    attributes:
+      label: Named consumer
+      description: Identify the concrete consumer and repository.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: List controlling sources, effective dates, retrieval dates, and rights.
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Authority and loss boundaries
+      description: State semantic authority, execution consumer, unsupported cases, and representational loss.
+    validations:
+      required: true

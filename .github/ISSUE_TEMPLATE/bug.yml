@@ -1,0 +1,19 @@
+name: Defect or provenance problem
+description: Report a deterministic validation, source, or adapter defect.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include pinned revisions, commands, and the smallest public or synthetic example.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true

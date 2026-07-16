@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "process-mappings-contract-consumption.v0.1.0",
+  "repository": {
+    "name": "edithatogo/rac-conformance",
+    "revision": "40e489bafc16e3713a1aaa1a3e17a920dddc12df",
+    "purpose": "Released PIC contract source; definitions are not copied into the incubator."
+  },
+  "normativeContracts": [
+    {"id": "pic-semantics/0.1.0", "path": "contracts/pic-semantics/0.1.0/schema.json", "sha256": "09468bfabe7d21eaa6da3f0053cf557fa4651a20a476a215d0b788b652235447"},
+    {"id": "pic-crosswalk/0.1.0", "path": "contracts/pic-crosswalk/0.1.0/schema.json", "sha256": "d9dfda99f365ffd7b86858810b65f637e4dcc0a2b9ed6292bf170ac6f209cc77"},
+    {"id": "pic-parameters/0.2.0", "path": "contracts/pic-parameters/0.2.0/schema.json", "sha256": "e42965ef8c8af74a5964f25c4bfea67f4a04c60a6ba7e47c65ebae4d8ad59ef6"},
+    {"id": "pic-fixtures/0.1.0", "path": "contracts/pic-fixtures/0.1.0/schema.json", "sha256": "8cd8ea1c0e82de7fa76abc008a388985ee3b90f27e29e47f29f6d6973c5e15ac"},
+    {"id": "pic-traces/0.2.0", "path": "contracts/pic-traces/0.2.0/schema.json", "sha256": "d62bea21adf3fc9315a6afe562f88a13baa1fcb3b5e81f45f1382dd5956691b5"},
+    {"id": "pic-foio-compatibility/0.1.0", "path": "contracts/pic-foio-compatibility/0.1.0/schema.json", "sha256": "295fd487b700739676cee716499b12683747441b9196114c44e30dfad7cba639"},
+    {"id": "process-profile/0.1.0", "path": "contracts/process-profile/0.1.0/schema.json", "sha256": "cad9bd4b41da6745ee3ee8bd6ec46b68cd3160e368ecbfda6ee8e4fd84dffa77"}
+  ],
+  "inputs": [
+    {
+      "id": "foi-o/process-model-conformance",
+      "repository": "edithatogo/foi-o",
+      "revision": "c4702380dfb50b0b856bbb1fc20953822dfaeee5",
+      "path": "schemas/json/process-model-conformance.schema.json",
+      "sha256": "a78ee84b3f385baef1f7fda107d28c9d5511802d2d83148b550f98f61ed7519b",
+      "status": "observed",
+      "method": "official-schema",
+      "observedAt": "2026-07-16"
+    },
+    {
+      "id": "foi-process/process-event",
+      "repository": "edithatogo/foi-process",
+      "revision": "9656e1aed5ee5a4c761c01f9a561a1cb74f26167",
+      "path": "schemas/portable/process-event.schema.json",
+      "sha256": "5e758674cbd1cbbd01a1b3c72d5dea6efe00bd06962893801c62222934a1c37f",
+      "status": "observed",
+      "method": "official-schema",
+      "observedAt": "2026-07-16"
+    },
+    {
+      "id": "foi-process/ocel-projection",
+      "repository": "edithatogo/foi-process",
+      "revision": "9656e1aed5ee5a4c761c01f9a561a1cb74f26167",
+      "path": "schemas/portable/ocel-projection.schema.json",
+      "sha256": "9e09bbd3eb4a3030356847881b3f740aa53f63f7473d6bdcedc54c8d2e2c7d5d",
+      "status": "observed",
+      "method": "official-schema",
+      "observedAt": "2026-07-16"
+    }
+  ],
+  "compatibilityMatrix": [
+    {
+      "consumer": "foi-o",
+      "role": "semantic-authority-input",
+      "contractIds": ["pic-semantics/0.1.0", "pic-crosswalk/0.1.0", "pic-parameters/0.2.0", "pic-fixtures/0.1.0", "pic-traces/0.2.0", "pic-foio-compatibility/0.1.0"],
+      "inputIds": ["foi-o/process-model-conformance"],
+      "lossPolicy": "Record representational loss; do not reinterpret FOI-O semantics."
+    },
+    {
+      "consumer": "foi-process",
+      "role": "execution-and-evidence-input",
+      "contractIds": ["pic-traces/0.2.0", "pic-foio-compatibility/0.1.0"],
+      "inputIds": ["foi-process/process-event", "foi-process/ocel-projection"],
+      "lossPolicy": "Record projection loss; foi-process remains implementation-authoritative."
+    }
+  ]
+}
