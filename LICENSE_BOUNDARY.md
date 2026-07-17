@@ -1,7 +1,7 @@
 # License Boundary
 
 During incubation, this subtree is distributed only as part of
-`rac-conformance` under the parent [Apache License 2.0](../../LICENSE). It is not
+`rac-conformance` under the parent [Apache License 2.0](LICENSE). It is not
 an independently released package and intentionally does not carry a second
 license file that could imply otherwise.
 
