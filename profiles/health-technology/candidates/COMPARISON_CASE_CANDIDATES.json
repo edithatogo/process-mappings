@@ -1,7 +1,15 @@
 {
   "profileId": "health-technology/regulator-hta-funder",
   "profileVersion": "0.1.0-candidate",
-  "selectionStatus": "awaiting-human-selection",
+  "selectionStatus": "human-selected",
+  "humanDecision": {
+    "decisionMaker": "Dylan",
+    "decisionDate": "2026-07-17",
+    "candidateId": "pembrolizumab-adjuvant-stage-iii-melanoma",
+    "jurisdictions": ["NZ", "UK"],
+    "scope": "Compare publicly documented Medsafe/Pharmac and MHRA/NICE process structures only; source verification remains required.",
+    "excludedClaims": ["clinical appropriateness", "cost-effectiveness", "funding recommendation", "patient access conclusion", "confidential commercial arrangements"]
+  },
   "method": "agent-proposed-public-source-comparison-scan",
   "scopeBoundary": "Scores describe process-evidence readiness and comparability only. They are not clinical, therapeutic, cost-effectiveness, funding, or access recommendations.",
   "scoringScale": "0-5 per dimension; scores are provisional until source-spine review.",
@@ -15,7 +23,7 @@
       "scores": {"sourceCompleteness": 4, "temporalComparability": 3, "indicationAlignment": 4, "publicDecisionEvidence": 4, "rights": 4, "implementationValue": 5},
       "total": 24,
       "limitations": ["Australian regulator source and exact PBS restriction record require source-spine verification", "Pharmac's 2025 wording covers a broader stage IIIB-IV resectable population than NICE's stage III wording", "commercial arrangements and confidential economic evidence remain unavailable"],
-      "status": "candidate-needs-human-selection"
+      "status": "selected-human-approved"
     },
     {
       "id": "pembrolizumab-advanced-melanoma",
@@ -26,7 +34,7 @@
       "scores": {"sourceCompleteness": 4, "temporalComparability": 2, "indicationAlignment": 3, "publicDecisionEvidence": 4, "rights": 4, "implementationValue": 5},
       "total": 22,
       "limitations": ["NICE TA366 is an older appraisal with a prior-ipilimumab boundary", "Pharmac's current access decision and FDA label are not temporally aligned with TA366", "Australian regulator and exact PBS restriction records require source-spine verification", "commercial arrangements and confidential economic evidence remain unavailable"],
-      "status": "candidate-needs-human-selection"
+      "status": "not-selected"
     },
     {
       "id": "pembrolizumab-first-line-nsclc",
@@ -37,9 +45,9 @@
       "scores": {"sourceCompleteness": 3, "temporalComparability": 3, "indicationAlignment": 3, "publicDecisionEvidence": 4, "rights": 4, "implementationValue": 4},
       "total": 21,
       "limitations": ["NZ Pharmac source spine for this indication was not identified in the initial scan", "NICE TA428 addresses post-chemotherapy PD-L1-positive disease rather than the FDA first-line TPS>=1% decision", "Australian regulator and exact PBS restriction records require source-spine verification", "trial or clinical outcome evidence is not a pathway decision record"],
-      "status": "candidate-needs-human-selection"
+      "status": "not-selected"
     }
   ],
   "noSelectionOutcome": "If no candidate satisfies the human-approved indication, date, authority, and source-rights boundaries, record no-selection and do not generate executable fixtures.",
-  "promotionBoundary": "No candidate is selected, certified, or promoted by this file. Human approval is required before executable comparative profiles are created."
+  "promotionBoundary": "The selected candidate is not certified or promoted by this file. Human source-spine review is required before executable comparative profiles or fixtures are created."
 }
